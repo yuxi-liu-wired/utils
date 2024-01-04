@@ -1,48 +1,48 @@
-[a]: Let $R$ be a finite set, where "R" could be read as "region", or "rectangle".
-b: Let $R$ be a finite set, where "R" can be read as "region" or "rectangle".
+a: Let $R$ be a finite set, where "R" could be read as "region", or "rectangle".
+[b]: Let $R$ be a finite set, where "R" can be read as "region" or "rectangle".
 c: what
 
-[a]: A key focus of the perceptron controversy is the concept of "conjunctively local".
-b: A key focus of the perceptron controversy is the concept of being "conjunctively local".
+a: A key focus of the perceptron controversy is the concept of "conjunctively local".
+[b]: A key focus of the perceptron controversy is the concept of being "conjunctively local".
 
-[a]: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special cases of the mask perceptron machine.
-b: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of the mask perceptron machine.
+a: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special cases of the mask perceptron machine.
+[b]: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of the mask perceptron machine.
 
-[a]: So it is natural to consider a special case of perceptron machines.
-b: Consequently, it is natural to consider a special case of perceptron machines.
+a: So it is natural to consider a special case of perceptron machines.
+[b]: Consequently, it is natural to consider this special case of perceptron machines.
 
-[a]: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to know the binary output $\psi(x)$.
-b: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to determine the binary output $\psi(x)$.
+a: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to know the binary output $\psi(x)$.
+[b]: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to determine the binary output $\psi(x)$.
 
-[a]: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
-b: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+a: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+[b]: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
 
-[a]: Once the groundwork is laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
-b: Once the groundwork was laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
+a: Once the groundwork is laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
+[b]: Once the groundwork was laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
 
-[a]: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
-b: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$, each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$; that is, there is at least one point of $X$ in each $A_i$.
+a: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
+[b]: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$, each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$; that is, there is at least one point of $X$ in each $A_i$.
 
-[a]: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
-b: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
+a: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+[b]: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
 
-a: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
-[b]: While their definition allows perceptron machines with any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
+[a]: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
+b: While their definition allows perceptron machines with any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
 
 a: Consequently, it is natural to consider a special case of perceptron machines.
-b: Consequently, it is natural to consider the special case of perceptron machines.
+[b]: Consequently, it is natural to consider this special case of perceptron machines.
 
 a: A mask for $A\subset R$ is a function of type $\{0, 1\}^R \to \R$, such that $\psi(x) = 1$ if $x_i =1$ for all $i \in A$, and else $\psi(x) = 0$.
-b: A mask for $A\subset R$ is a function of type $\{0, 1\}^R \to \R$, such that $\psi(x) = 1$ if $x_i = 1$ for all $i \in A$, and otherwise $\psi(x) = 0$.
+[b]: A mask for $A\subset R$ is a function of type $\{0, 1\}^R \to \R$, such that $\psi(x) = 1$ if $x_i = 1$ for all $i \in A$, and otherwise $\psi(x) = 0$.
 
 a: Let $\psi$ be a hidden perceptron with nonzero weights on the input points $x_{i_1}, ..., x_{i_k}$, then its output is determined by the values of $x_{i_1}, ..., x_{i_k}$.
-b: Let $\psi$ be a hidden perceptron with nonzero weights on the input points $x_{i_1}, ..., x_{i_k}$; then, its output is determined by the values of $x_{i_1}, ..., x_{i_k}$.
+[b]: Let $\psi$ be a hidden perceptron with nonzero weights on the input points $x_{i_1}, ..., x_{i_k}$; then, its output is determined by the values of $x_{i_1}, ..., x_{i_k}$.
 
-a: Therefore, we can partition the binary set $\{0, 1\}^{i_1, ..., i_k}$ into two subsets $A_0, A_1$, such that for any input $x\in\{0, 1\}^R$, we have $\psi(x) = 1$ iff $(x_{i_1}, ..., x_{i_k}) \in A_1$.
+[a]: Therefore, we can partition the binary set $\{0, 1\}^{i_1, ..., i_k}$ into two subsets $A_0, A_1$, such that for any input $x\in\{0, 1\}^R$, we have $\psi(x) = 1$ iff $(x_{i_1}, ..., x_{i_k}) \in A_1$.
 b: Therefore, we can partition the binary set $\{0, 1\}^{i_1, ..., i_k}$ into two subsets, $A_0$ and $A_1$, such that for any input $x\in\{0, 1\}^R$, we have $\psi(x) = 1$ iff $(x_{i_1}, ..., x_{i_k}) \in A_1$.
 
 a: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
-b: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+[b]: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
 
 a: If a boolean function is $G$-invariant, where $G$ is a finite group, then any perceptron machine computing it can be converted to a perceptron machine $\theta(\sum_i a_i \psi_i)$, such that if $\psi_i=\psi_j \circ g$ for some $g \in G$, then $a_i=a_j$.
 b: If a boolean function is $G$-invariant, where $G$ is a finite group, then any perceptron machine computing it can be converted to a perceptron machine $\theta(\sum_i a_i \psi_i)$, such that if $\psi_i = \psi_j \circ g$ for some $g \in G$, then $a_i = a_j$.
@@ -50,17 +50,8 @@ b: If a boolean function is $G$-invariant, where $G$ is a finite group, then any
 a: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
 b: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$, each of size $4m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right| > 0$, that is, there is at least one point of $X$ in each $A_i$.
 
-a: The order of $\psi$ is $\geq m$.
-b: The order of $\psi$ is $\geq m$.
-
-a: The predicate $\psi$ is invariant with respect to the group $S_{A_1} \times \cdots \times S_{A_m}$, so by the same construction as the proof of @thm-group-invariance, there exists a polynomial $P(t_1, ..., t_m)$, where $P$ has order $k$, and
-b: The predicate $\psi$ is invariant with respect to the group $S_{A_1} \times \cdots \times S_{A_m}$, so by the same construction as the proof of @thm-group-invariance, there exists a polynomial $P(t_1, ..., t_m)$, where $P$ has order $k$, and
-
 a: Now define $Q(t) := P((t-1)^2, (t-3)^2, \cdots, (t-2m+1)^2)$.
 b: Now define $Q(t) := P((t-1)^2, (t-3)^2, ..., (t-2m+1)^2)$.
-
-a: Thus, $2k \geq 2m$.
-b: Thus, $2k \geq 2m$.
 
 a: for any $X \subset R$, we have $\psi(X)=\psi(g(X))$
 b: For any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
@@ -95,9 +86,6 @@ b: The little robot with a "memory size of two" really had a memory size of $2 \
 a: They left as an exercise to the reader about translating the previous robot with two memory slots to this robot with one pebble.
 b: They left as an exercise for the reader the task of translating the previous robot with two memory slots to this robot with one pebble.
 
-a: They conjectured that a finite state machine (a robot with no pebbles) would be unable to solve the task, but they could not prove it.
-b: They conjectured that a finite state machine (a robot with no pebbles) would be unable to solve the task, but they could not prove it.
-
 a: They claim Chapter 10 is part of the learning theory.
 b: They claim that Chapter 10 is part of the learning theory.
 
@@ -116,9 +104,6 @@ b: Since the group-symmetric construction can only average out the most extreme 
 a: Section 10.2 and 10.3 constructs two pathological examples.
 b: Sections 10.2 and 10.3 construct two pathological examples.
 
-a: Section 10.4 purports to extend the group invariance theorem to the infinite case.
-b: Section 10.4 purports to extend the group invariance theorem to the infinite case.
-
 a: However, they interpreted this as a serious problem:
 b: However, they interpret this as a serious problem:
 
@@ -136,9 +121,6 @@ b: Otherwise, we update $w$ to $w \leftarrow w + \alpha y x$, where $\alpha > 0$
 
 a: Let $D$ be a dataset, with radius $R = \max_{(x, y) \in D} \|x\|$.
 b: Let $D$ be a dataset with radius $R = \max_{(x, y) \in D} \|x\|$.
-
-a: Now, each weight update increases the first coordinate of $w$ by at least $1$, so after $n$ updates, $\|w\| \geq n$.
-b: Now, each weight update increases the first coordinate of $w$ by at least $1$, so after $n$ updates, $\|w\| \geq n$.
 
 a: However, each weight update of $w \leftarrow w + x$ uses a vector $x$ that is pointing at a direction perpendicular to $w$, or worse, pointing against $w$.
 b: However, each weight update of $w \leftarrow w + x$ uses a vector $x$ that is pointing in a direction perpendicular to $w$, or worse, pointing against $w$.
@@ -160,9 +142,6 @@ b: However, the perceptron cycling theorem shows that if the dataset is finite, 
 
 a: Section 12.6 and 12.7 study variations on a toy problem: given a subset of $\{0, 1\}^n$, decide whether a $n$-bit word is in it or not.
 b: Sections 12.6 and 12.7 study variations on a toy problem: given a subset of $\{0, 1\}^n$, decide whether an $n$-bit word is in it or not.
-
-a: This had relevance to the time-space tradeoff, a perennial topic in computational complexity.
-b: This had relevance to the time-space tradeoff, a perennial topic in computational complexity.
 
 a: They discussed "Gamba perceptrons", which is just another name for two-layered perceptrons where the hidden layer consists of perceptrons, instead of merely masks.
 b: They discussed "Gamba perceptrons," which is just another name for two-layer perceptrons where the hidden layer consists of perceptrons, instead of merely masks.

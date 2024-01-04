@@ -2,6 +2,7 @@ from blessed import Terminal
 import difflib
 import sys
 from dataclasses import dataclass, replace
+import textwrap
 
 
 @dataclass
@@ -53,8 +54,13 @@ def read_file(file_path):
                 original=orig_line, modified=mod_line, status=status, reason=reason
             )
             sentence_pairs.append(pair)
-
+    # Filter out sentences that are equal
+    sentence_pairs = [pair for pair in sentence_pairs if pair.original != pair.modified]
     return sentence_pairs
+
+
+def split_into_chunks(text, chunk_size):
+    return [text[i : i + chunk_size] for i in range(0, len(text), chunk_size)]
 
 
 def display_pairs(t, pairs, current_index):
@@ -70,29 +76,46 @@ def display_pairs(t, pairs, current_index):
     if len(diff) == 1:
         diff = [diff[0], "", diff[0], ""]
     elif len(diff) == 2:
-        diff = ["", diff[0], "", diff[1]]
+        diff = [diff[0], "", diff[1], ""]
     elif len(diff) == 3:
         if diff[1].startswith("?"):
             diff = [diff[0], diff[1], diff[2], ""]
         else:
             diff = [diff[0], "", diff[1], diff[2]]
+    # Padding
+    diff[1] += " " * (len(diff[0]) - len(diff[1]))
+    diff[3] += " " * (len(diff[2]) - len(diff[3]))
 
     # Display the original and modified texts with background color
     status_1 = f"Editing: {current_index + 1}/{len(pairs)}"
     status_2 = f"Pairs left: {undecided_count}/{len(pairs)}"
     status = status_1 + " " * (t.width - len(status_1) - len(status_2)) + status_2
     print(t.black_on_bright_white(status))
-    # print(t.move_y(1) + "─" * (t.width - 1))
-    if pair.status == "a":
-        print(t.move_xy(2, 4) + t.bright_red_on_bright_black(diff[0]))
-    else:
-        print(t.move_xy(2, 4) + t.bright_red_on_black(diff[0]))
-    print(t.move_x(2) + t.bright_red_on_black(diff[1]))
-    if pair.status == "b":
-        print(t.move_x(2) + t.bright_green_on_bright_black(diff[2]))
-    else:
-        print(t.move_x(2) + t.bright_green_on_black(diff[2]))
-    print(t.move_x(2) + t.bright_green_on_black(diff[3]))
+
+    fa = t.bright_red_on_bright_black if pair.status == "a" else t.bright_red_on_black
+    fb = (
+        t.bright_green_on_bright_black
+        if pair.status == "b"
+        else t.bright_green_on_black
+    )
+
+    wrap_width = 100
+    diff0 = split_into_chunks(diff[0], wrap_width)
+    diff1 = split_into_chunks(diff[1], wrap_width)
+    diff2 = split_into_chunks(diff[2], wrap_width)
+    diff3 = split_into_chunks(diff[3], wrap_width)
+
+    print(t.move_y(4))
+    for i, (line0, line1) in enumerate(zip(diff0, diff1)):
+        print(t.move_xy(2, 4 + 2 * i) + fa(line0))
+        print(t.move_x(2, 4 + 2 * i + 1) + t.bright_red_on_black(line1))
+    # print(t.move_y(4 + 2 * len(diff0) + 1))
+    for i, (line2, line3) in enumerate(zip(diff2, diff3)):
+        print(t.move_xy(2, 4 + 2 * len(diff0) + 1 + 2 * i) + fb(line2))
+        print(
+            t.move_xy(2, 4 + 2 * len(diff0) + 1 + 2 * i + 1)
+            + t.bright_green_on_black(line3)
+        )
 
     print("\n\n" + t.move_x(2) + pair.reason)
 

@@ -59,7 +59,7 @@ where $\theta(t) := 1_{t \geq 0}$ is the 0-1 step function.
 A perceptron machine with $k$ hidden neurons is a function of type $\{0, 1\}^R \to \{0, 1\}$, defined by
 
 $$
-\Phi(x) := \psi_{k+1}(\psi_1(x), \psi_2(x), \cdots, \psi_k(x))
+\Phi(x) := \psi_{k+1}(\psi_1(x), \psi_2(x), ..., \psi_k(x))
 $$
 
 where $\psi_1, ..., \psi_k$ are (hidden) perceptrons in the hidden layer, and $\psi_{k+1}$ is the single output perceptron.
@@ -194,7 +194,7 @@ $$
 \forall t_1, ..., t_m \in \{0, 1, ..., 4m^2\}, P(t_1, ..., t_m) < 0 \iff t_1 = 0 \vee \cdots \vee t_m = 0
 $$
 
-Now define $Q(t) := P((t-1)^2, (t-3)^2, \cdots, (t-2m+1)^2)$. By the above equation, $Q < 0$ at $t=1, 3, \cdots, 2m - 1$ and $Q \geq 0$ at $t = 0, 2, \cdots, 2m$. Thus, $Q$ has order $\geq 2m$. Thus, $2k \geq 2m$.
+Now define $Q(t) := P((t-1)^2, (t-3)^2, ..., (t-2m+1)^2)$. By the above equation, $Q < 0$ at $t=1, 3, ..., 2m - 1$ and $Q \geq 0$ at $t = 0, 2, ..., 2m$. Thus, $Q$ has order $\geq 2m$. Thus, $2k \geq 2m$.
 
 :::
 
@@ -345,7 +345,7 @@ They claim Chapter 10 is part of the learning theory. However, it does not actua
 :::{#exm-parity-order}
 ## Theorem 10.1
 
-Suppose we have a perceptron machine that tests for parity, then by @thm-parity-order, it must have order $|R|$. As in the construction given in the proof, we use the group invariance theorem to obtain a group-symmetric machine with form $\theta(\sum_{i=0}^{|R|}\binom{|X|}{i} b_i)$, where $b_0, b_1, ..., b_{|R|}$ are real numbers. Then, assuming the machine is "reliable", we can prove that $(-1)^{M} b_{M+1} \geq 2^{M}$ for any $M \in \{0, 1, \cdots, |R|-1\}$.
+Suppose we have a perceptron machine that tests for parity, then by @thm-parity-order, it must have order $|R|$. As in the construction given in the proof, we use the group invariance theorem to obtain a group-symmetric machine with form $\theta(\sum_{i=0}^{|R|}\binom{|X|}{i} b_i)$, where $b_0, b_1, ..., b_{|R|}$ are real numbers. Then, assuming the machine is "reliable", we can prove that $(-1)^{M} b_{M+1} \geq 2^{M}$ for any $M \in \{0, 1, ..., |R|-1\}$.
 
 Since the group-symmetric construction can only average out the most extreme values, this implies that before the group-symmetric construction, our perceptron machine had even more extreme coefficients.
 
@@ -363,7 +363,7 @@ $$
 
 Define $A_n = \sum_{i=0}^n \binom{n}{i}b_i$. Since the machine is reliable, we have that $(-1)^{n}(A_{n+1} - A_n) \geq 1$ for each $n = 0, 1, ..., |R|-1$. Simplifying the binomial coefficients, we have $A_{n+1} - A_n = \sum_i \binom{n}{i} b_{i+1}$. Note that we use the convenient convention that $\binom{x}{y} = 0$ if $x < y$.
 
-Now fix any $M \in \{0, 1, \cdots, |R|-1\}$, and evaluate the following inequality:
+Now fix any $M \in \{0, 1, ..., |R|-1\}$, and evaluate the following inequality:
 
 $$
 2^{M} = \sum_n \binom{M}{n} \cdot 1 \leq \sum_n \binom{M}{n} (-1)^{n}(A_{n+1} - A_n)
@@ -405,7 +405,7 @@ By linearity of the learning rule, we can deal only with the case where $\alpha 
 
 By multiplying each $x$ with its $y$, we can deal only with the case where all $y = +1$.
 
-By rotating and scaling the space, we can deal only with the case where $w^* = (1, 0, \cdots, 0)$, and $\gamma = 1$.
+By rotating and scaling the space, we can deal only with the case where $w^* = (1, 0, ..., 0)$, and $\gamma = 1$.
 
 Now, each weight update increases the first coordinate of $w$ by at least $1$, so after $n$ updates, $\|w\| \geq n$. However, each weight update of $w \leftarrow w + x$ uses a vector $x$ that is pointing at a direction perpendicular to $w$, or worse, pointing against $w$. Therefore, by Pythagorean theorem, $\|w\|^2$ increases by at most $\|x\|^2 \leq R^2$. So after $n$ updates, $\|w\|^2 \leq nR^2$.
 
