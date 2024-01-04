@@ -1,3 +1,6 @@
+# Setting up the MAMBA_ROOT_PREFIX environment variable
+$Env:MAMBA_ROOT_PREFIX="$HOME\micromambaenv"
+
 # Displaying micromamba help
 micromamba --help
 
