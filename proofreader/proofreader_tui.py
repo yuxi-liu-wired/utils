@@ -87,7 +87,7 @@ def display_pairs(t, pairs, current_index):
 
 
 def print_pair(pair):
-    if pair.reason = "":
+    if pair.reason == "":
         reason = ""
     else:
         reason = f"\nc: {pair.reason}"
