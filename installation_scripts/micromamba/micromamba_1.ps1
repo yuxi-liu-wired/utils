@@ -26,9 +26,10 @@ cd ..
 Remove-Item -Force -Recurse -Path MicroMambaTemp
 
 # Setting alias for micromamba
-If (-Not (Test-Path $PROFILE)) { 
-    New-Item -Type File -Force $PROFILE 
-}
-Add-Content -Path $PROFILE -Value "Set-Alias -Name mamba -Value `$(Join-Path '$targetDir' 'micromamba.exe')"
+# The alias doesn't FUCKING WORK
+# If (-Not (Test-Path $PROFILE)) { 
+#     New-Item -Type File -Force $PROFILE 
+# }
+# Add-Content -Path $PROFILE -Value "Set-Alias -Name mamba -Value `$(Join-Path '$targetDir' 'micromamba.exe')"
 
 echo "Restart PowerShell and run micromamba_2.ps1 to complete the installation."
