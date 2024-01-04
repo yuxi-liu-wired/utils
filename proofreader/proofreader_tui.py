@@ -87,8 +87,12 @@ def display_pairs(t, pairs, current_index):
 
 
 def print_pair(pair):
+    if pair.reason = "":
+        reason = ""
+    else:
+        reason = f"\nc: {pair.reason}"
     if pair.status == "a":
-        return f"[a]: {pair.original}\nb: {pair.modified}\n\n"
+        return f"[a]: {pair.original}\nb: {pair.modified}{reason}\n\n"
     elif pair.status == "b":
         return f"a: {pair.original}\n[b]: {pair.modified}\n\n"
     else:
