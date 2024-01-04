@@ -1,0 +1,180 @@
+a: Let $R$ be a finite set, where "R" could be read as "region", or "rectangle".
+[b]: Let $R$ be a finite set, where "R" can be read as "region" or "rectangle".
+
+[a]: A key focus of the perceptron controversy is the concept of "conjunctively local".
+b: A key focus of the perceptron controversy is the concept of being "conjunctively local".
+
+a: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special cases of the mask perceptron machine.
+[b]: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of the mask perceptron machine.
+
+a: So it is natural to consider a special case of perceptron machines.
+[b]: Consequently, it is natural to consider a special case of perceptron machines.
+
+a: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to know the binary output $\psi(x)$.
+b: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to determine the binary output $\psi(x)$.
+
+a: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+b: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+
+a: Once the groundwork is laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
+b: Once the groundwork was laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
+
+a: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
+b: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$, each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$; that is, there is at least one point of $X$ in each $A_i$.
+
+a: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+b: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
+
+a: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
+b: While their definition allows perceptron machines with any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
+
+a: Consequently, it is natural to consider a special case of perceptron machines.
+b: Consequently, it is natural to consider the special case of perceptron machines.
+
+a: A mask for $A\subset R$ is a function of type $\{0, 1\}^R \to \R$, such that $\psi(x) = 1$ if $x_i =1$ for all $i \in A$, and else $\psi(x) = 0$.
+b: A mask for $A\subset R$ is a function of type $\{0, 1\}^R \to \R$, such that $\psi(x) = 1$ if $x_i = 1$ for all $i \in A$, and otherwise $\psi(x) = 0$.
+
+a: Let $\psi$ be a hidden perceptron with nonzero weights on the input points $x_{i_1}, ..., x_{i_k}$, then its output is determined by the values of $x_{i_1}, ..., x_{i_k}$.
+b: Let $\psi$ be a hidden perceptron with nonzero weights on the input points $x_{i_1}, ..., x_{i_k}$; then, its output is determined by the values of $x_{i_1}, ..., x_{i_k}$.
+
+a: Therefore, we can partition the binary set $\{0, 1\}^{i_1, ..., i_k}$ into two subsets $A_0, A_1$, such that for any input $x\in\{0, 1\}^R$, we have $\psi(x) = 1$ iff $(x_{i_1}, ..., x_{i_k}) \in A_1$.
+b: Therefore, we can partition the binary set $\{0, 1\}^{i_1, ..., i_k}$ into two subsets, $A_0$ and $A_1$, such that for any input $x\in\{0, 1\}^R$, we have $\psi(x) = 1$ iff $(x_{i_1}, ..., x_{i_k}) \in A_1$.
+
+a: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+b: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+
+a: If a boolean function is $G$-invariant, where $G$ is a finite group, then any perceptron machine computing it can be converted to a perceptron machine $\theta(\sum_i a_i \psi_i)$, such that if $\psi_i=\psi_j \circ g$ for some $g \in G$, then $a_i=a_j$.
+b: If a boolean function is $G$-invariant, where $G$ is a finite group, then any perceptron machine computing it can be converted to a perceptron machine $\theta(\sum_i a_i \psi_i)$, such that if $\psi_i = \psi_j \circ g$ for some $g \in G$, then $a_i = a_j$.
+
+a: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
+b: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$, each of size $4m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right| > 0$, that is, there is at least one point of $X$ in each $A_i$.
+
+a: The order of $\psi$ is $\geq m$.
+b: The order of $\psi$ is $\geq m$.
+
+a: The predicate $\psi$ is invariant with respect to the group $S_{A_1} \times \cdots \times S_{A_m}$, so by the same construction as the proof of @thm-group-invariance, there exists a polynomial $P(t_1, ..., t_m)$, where $P$ has order $k$, and
+b: The predicate $\psi$ is invariant with respect to the group $S_{A_1} \times \cdots \times S_{A_m}$, so by the same construction as the proof of @thm-group-invariance, there exists a polynomial $P(t_1, ..., t_m)$, where $P$ has order $k$, and
+
+a: Now define $Q(t) := P((t-1)^2, (t-3)^2, \cdots, (t-2m+1)^2)$.
+b: Now define $Q(t) := P((t-1)^2, (t-3)^2, ..., (t-2m+1)^2)$.
+
+a: Thus, $2k \geq 2m$.
+b: Thus, $2k \geq 2m$.
+
+a: for any $X \subset R$, we have $\psi(X)=\psi(g(X))$
+b: For any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
+
+a: Chapters 6--9 continue in the same style, but moves to the case where the input space is made of one or two copies of the infinite line $\Z$, or the infinite plane $\Z^2$, and the predicate to recognize is still translation-invariant.
+b: Chapters 6--9 continue in the same style, but move to the case where the input space is made of one or two copies of the infinite line $\Z$, or the infinite plane $\Z^2$, and the predicate to recognize is still translation-invariant.
+
+a: the predicate "$X$\$ contains one horizontal line across plane" is not locally conjunctive.
+b: the predicate "$X$ contains one horizontal line across the plane" is not locally conjunctive.
+
+a: Expanding term by term, we have $|(f_{m, n}(x) - 1/2)| \leq 2(n-m) + \frac 12$.
+b: Expanding term by term, we have $|f_{m, n}(x) - 1/2| \leq 2(n-m) + \frac{1}{2}$.
+
+a: The sum on the right is bounded by
+b: The sum on the right-hand side is bounded by
+
+a: The lower bound implies $M_d = \Omega((d!)^2 \times d^{-1})$ and upper bound implies $M_d = O((d!)^2 \times (d+1)^2)$.
+b: The lower bound implies $M_d = \Omega((d!)^2 \times d^{-1})$ and the upper bound implies $M_d = O((d!)^2 \times (d+1)^2)$.
+
+a: Namely, it only need to store up to two locations $(x, y), (x', y')$ in its memory during its operation, and it eventually halts in one of three states "empty", "connected", and "disconnected".
+b: Namely, it only needs to store up to two locations $(x, y), (x', y')$ in its memory during its operation, and it eventually halts in one of three states: "empty," "connected," and "disconnected."
+
+a: Notice that, a robot with no memory can still remember a finite number of memories.
+b: Notice that a robot with no memory can still remember a finite number of states.
+
+a: It is simply that those memory slots are its finite states which does not scale with the size of the problem.
+b: It is simply that those memory slots are its finite states, which do not scale with the size of the problem.
+
+a: The little robot with a "memory size of two" really had a memory size of $2 \log_2|R|$ bits, because it can remember two coordinates from the square $R$, no matter how large the square grows.
+b: The little robot with a "memory size of two" really had a memory size of $2 \log_2|R|$ bits because it could remember two coordinates from the square $R$, no matter how large the square grew.
+
+a: They left as an exercise to the reader about translating the previous robot with two memory slots to this robot with one pebble.
+b: They left as an exercise for the reader the task of translating the previous robot with two memory slots to this robot with one pebble.
+
+a: They conjectured that a finite state machine (a robot with no pebbles) would be unable to solve the task, but they could not prove it.
+b: They conjectured that a finite state machine (a robot with no pebbles) would be unable to solve the task, but they could not prove it.
+
+a: They claim Chapter 10 is part of the learning theory.
+b: They claim that Chapter 10 is part of the learning theory.
+
+a: Suppose we have a perceptron machine that tests for parity, then by @thm-parity-order, it must have order $|R|$.
+b: Suppose we have a perceptron machine that tests for parity; then, by @thm-parity-order, it must have order $|R|$.
+
+a: As in the construction given in the proof, we use the group invariance theorem to obtain a group-symmetric machine with form $\theta(\sum_{i=0}^{|R|}\binom{|X|}{i} b_i)$, where $b_0, b_1, ..., b_{|R|}$ are real numbers.
+b: As in the construction given in the proof, we use the group invariance theorem to obtain a group-symmetric machine with the form $\theta(\sum_{i=0}^{|R|}\binom{|X|}{i} b_i)$, where $b_0, b_1, ..., b_{|R|}$ are real numbers.
+
+a: Then, assuming the machine is "reliable", we can prove that $(-1)^{M} b_{M+1} \geq 2^{M}$ for any $M \in \{0, 1, \cdots, |R|-1\}$.
+b: Then, assuming the machine is "reliable," we can prove that $(-1)^{M} b_{M+1} \geq 2^{M}$ for any $M \in \{0, 1, \cdots, |R|-1\}$.
+
+a: Since the group-symmetric construction can only average out the most extreme values, this implies that before the group-symmetric construction, our perceptron machine had even more extreme coefficients.
+b: Since the group-symmetric construction can only average out the most extreme values, this implies that, before the group-symmetric construction, our perceptron machine had even more extreme coefficients.
+
+a: Section 10.2 and 10.3 constructs two pathological examples.
+b: Sections 10.2 and 10.3 construct two pathological examples.
+
+a: Section 10.4 purports to extend the group invariance theorem to the infinite case.
+b: Section 10.4 purports to extend the group invariance theorem to the infinite case.
+
+a: However, they interpreted this as a serious problem:
+b: However, they interpret this as a serious problem:
+
+a: In Chapter 11, they *finally* start discussing perceptron learning, which is of a very restrictive form.
+b: In Chapter 11, they *finally* begin discussing perceptron learning, which is of a very restrictive form.
+
+a: For this chapter, it is cleaner to change the convention, so that each perceptron outputs $-1, +1$, instead of $0, 1$.
+b: For this chapter, it is cleaner to change the convention so that each perceptron outputs $-1, +1$ instead of $0, 1$.
+
+a: Since only the output perceptron is adapted, it suffices to discuss the case where there are *no* hidden perceptrons, and we only need to adapt the weights of a single perceptron.
+b: Since only the output perceptron is adapted, it suffices to discuss the case where there are *no* hidden perceptrons, and we need only to adapt the weights of a single perceptron.
+
+a: Otherwise, we update $w$ by $w \leftarrow w + \alpha y x$, where $\alpha > 0$ is the learning rate.
+b: Otherwise, we update $w$ to $w \leftarrow w + \alpha y x$, where $\alpha > 0$ is the learning rate.
+
+a: Let $D$ be a dataset, with radius $R = \max_{(x, y) \in D} \|x\|$.
+b: Let $D$ be a dataset with radius $R = \max_{(x, y) \in D} \|x\|$.
+
+a: Now, each weight update increases the first coordinate of $w$ by at least $1$, so after $n$ updates, $\|w\| \geq n$.
+b: Now, each weight update increases the first coordinate of $w$ by at least $1$, so after $n$ updates, $\|w\| \geq n$.
+
+a: However, each weight update of $w \leftarrow w + x$ uses a vector $x$ that is pointing at a direction perpendicular to $w$, or worse, pointing against $w$.
+b: However, each weight update of $w \leftarrow w + x$ uses a vector $x$ that is pointing in a direction perpendicular to $w$, or worse, pointing against $w$.
+
+a: Combining the two results we have $n \leq R^2$.
+b: Combining the two results, we have $n \leq R^2$.
+
+a: Modifying the proof slightly, and applying the conclusion of @exm-parity-order, we find that starting with the zero weight vector, it takes at least $2^{|R|}/|R|$ steps steps to learn the parity function.
+b: Modifying the proof slightly, and applying the conclusion of @exm-parity-order, we find that starting with the zero weight vector, it takes at least $2^{|R|}/|R|$ steps to learn the parity function.
+
+a: They then gestured that gradient descent is just a somewhat more efficient perceptron learning rule, and cannot escape local optima.
+b: They then suggest that gradient descent is just a somewhat more efficient perceptron learning rule and cannot escape local optima.
+
+a: If the dataset is not linearly separable, then the perceptron weight would not converge.
+b: If the dataset is not linearly separable, then the perceptron weights will not converge.
+
+a: However, the perceptron cycling theorem shows that if the dataset is finite, then the perceptron weight would still be trapped within a large but finite disk, no matter how the dataset is sampled.
+b: However, the perceptron cycling theorem shows that if the dataset is finite, then the perceptron weights will still be trapped within a large but finite disk, no matter how the dataset is sampled.
+
+a: Section 12.6 and 12.7 study variations on a toy problem: given a subset of $\{0, 1\}^n$, decide whether a $n$-bit word is in it or not.
+b: Sections 12.6 and 12.7 study variations on a toy problem: given a subset of $\{0, 1\}^n$, decide whether an $n$-bit word is in it or not.
+
+a: This had relevance to the time-space tradeoff, a perennial topic in computational complexity.
+b: This had relevance to the time-space tradeoff, a perennial topic in computational complexity.
+
+a: They discussed "Gamba perceptrons", which is just another name for two-layered perceptrons where the hidden layer consists of perceptrons, instead of merely masks.
+b: They discussed "Gamba perceptrons," which is just another name for two-layer perceptrons where the hidden layer consists of perceptrons, instead of merely masks.
+
+a: They made the infamous prediction that not only Gamba perceptrons, but arbitrary multilayer perceptrons, would be a "sterile extension".
+b: They made the infamous prediction that not only Gamba perceptrons but also arbitrary multilayer perceptrons would be a "sterile extension."
+
+a: In short, their objection to multilayered perceptrons is that they suffer from Turing completeness, and so it is hard to prove anything concrete about them, except the trivial claim that they are Turing complete.
+b: In short, their objection to multilayer perceptrons is that they suffer from Turing completeness, making it hard to prove anything concrete about them, except the trivial claim that they are Turing complete.
+
+a: Since a perceptron-only architecture is the wrong way, they illustrated what the "right" way to do computer vision should be like, by describing in detail the scene analysis algorithm.
+b: Since a perceptron-only architecture is not the right way, they illustrated what they believe to be the "right" way to do computer vision by describing in detail the scene analysis algorithm.
+
+a: In short, it starts by discovering edges, then perform some computational geometry on it to recover outlines of basic shapes, such as cubes, then fill in the faces, then fill in the bodies between the faces.
+b: In short, it starts by discovering edges, then performs some computational geometry on them to recover outlines of basic shapes, such as cubes, then fills in the faces, then fills in the bodies between the faces.
+
