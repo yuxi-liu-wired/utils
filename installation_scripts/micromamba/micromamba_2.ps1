@@ -11,3 +11,7 @@ micromamba shell hook -s powershell | Out-String | Invoke-Expression
 micromamba shell init -s powershell -p $Env:MAMBA_ROOT_PREFIX
 
 echo "Try `micromamba create -f mamba_math.yml` to see it working."
+echo "Also, try adding to `~/.mambarc` "
+echo "channels:"
+echo " - conda-forge"
+echo "always_yes: false "
