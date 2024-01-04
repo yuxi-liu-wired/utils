@@ -1,32 +1,33 @@
-a: Let $R$ be a finite set, where "R" could be read as "region", or "rectangle".
-[b]: Let $R$ be a finite set, where "R" can be read as "region" or "rectangle".
+[a]: Let $R$ be a finite set, where "R" could be read as "region", or "rectangle".
+b: Let $R$ be a finite set, where "R" can be read as "region" or "rectangle".
+c: what
 
 [a]: A key focus of the perceptron controversy is the concept of "conjunctively local".
 b: A key focus of the perceptron controversy is the concept of being "conjunctively local".
 
-a: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special cases of the mask perceptron machine.
-[b]: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of the mask perceptron machine.
+[a]: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special cases of the mask perceptron machine.
+b: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of the mask perceptron machine.
 
-a: So it is natural to consider a special case of perceptron machines.
-[b]: Consequently, it is natural to consider a special case of perceptron machines.
+[a]: So it is natural to consider a special case of perceptron machines.
+b: Consequently, it is natural to consider a special case of perceptron machines.
 
-a: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to know the binary output $\psi(x)$.
+[a]: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to know the binary output $\psi(x)$.
 b: In other words, we only need to look at the binary values $x_{i_1}, ..., x_{i_k}$ to determine the binary output $\psi(x)$.
 
-a: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+[a]: That is, any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
 b: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
 
-a: Once the groundwork is laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
+[a]: Once the groundwork is laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
 b: Once the groundwork was laid, they proceeded to prove a wide variety of theorems on the order of particular boolean functions.
 
-a: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
+[a]: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$ each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$, that is, there is at least one point of $X$ in each $A_i$.
 b: Let $A_1, A_2, ..., A_m$ be disjoint subsets of $R$, each of size $4 m^2$, and define the predicate $\psi(X) = \forall i, \left|X \cap A_i\right|>0$; that is, there is at least one point of $X$ in each $A_i$.
 
-a: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+[a]: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
 b: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
 
 a: While their definition allows perceptron machines of any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
-b: While their definition allows perceptron machines with any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
+[b]: While their definition allows perceptron machines with any real-valued weights and biases, they immediately performed a [computational reduction](https://en.wikipedia.org/wiki/Reduction_(complexity)) to the special case of mask perceptron machines.
 
 a: Consequently, it is natural to consider a special case of perceptron machines.
 b: Consequently, it is natural to consider the special case of perceptron machines.

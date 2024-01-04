@@ -1,10 +1,21 @@
-from collections import namedtuple
 from blessed import Terminal
 import difflib
 import sys
+from dataclasses import dataclass, replace
 
-# Named tuple for sentence pairs
-SentencePair = namedtuple("SentencePair", "original modified status reason")
+
+@dataclass
+class SentencePair:
+    original: str
+    modified: str
+    status: str
+    reason: str = ""
+
+    def __str__(self):
+        a = ("[a]" if self.status == "a" else "a") + f": {self.original}"
+        b = ("[b]" if self.status == "b" else "b") + f": {self.modified}"
+        reason = f"\nc: {self.reason}" if self.reason else ""
+        return f"{a}\n{b}{reason}\n\n"
 
 
 def read_file(file_path):
@@ -86,26 +97,10 @@ def display_pairs(t, pairs, current_index):
     print("\n\n" + t.move_x(2) + pair.reason)
 
 
-def print_pair(pair):
-    if pair.reason == "":
-        reason = ""
-    else:
-        reason = f"\nc: {pair.reason}"
-    if pair.status == "a":
-        return f"[a]: {pair.original}\nb: {pair.modified}{reason}\n\n"
-    elif pair.status == "b":
-        return f"a: {pair.original}\n[b]: {pair.modified}\n\n"
-    else:
-        return f"a: {pair.original}\nb: {pair.modified}\n\n"
-
-
-def print_pairs(pairs):
-    return "".join(map(print_pair, pairs))
-
-
 def save_pairs(filename, pairs):
     with open(f"{filename}", "w") as f:
-        f.write(print_pairs(pairs))
+        text = "".join(map(str, pairs))
+        f.write(text)
 
 
 def handle_keypress(t, key, pairs, current_index):
@@ -120,13 +115,13 @@ def handle_keypress(t, key, pairs, current_index):
         else:
             return current_index + 1
     elif key.code == t.KEY_UP:
-        pairs[current_index] = pairs[current_index]._replace(status="a")
+        pairs[current_index] = replace(pairs[current_index], status="a")
         return current_index
     elif key.code == t.KEY_DOWN:
-        pairs[current_index] = pairs[current_index]._replace(status="b")
+        pairs[current_index] = replace(pairs[current_index], status="b")
         return current_index
     elif key == " ":
-        pairs[current_index] = pairs[current_index]._replace(status="undecided")
+        pairs[current_index] = replace(pairs[current_index], status="undecided")
     elif key.code == t.KEY_ENTER:
         try:
             return next(
@@ -188,8 +183,7 @@ def main():
                 print(t.home + t.clear)
                 sys.exit(0)
             elif key == "w":
-                with open(f"{filename}", "w") as f:
-                    f.write(print_pairs(sentence_pairs))
+                save_pairs(filename, sentence_pairs)
             elif key == "h":
                 display_help(t)
                 t.inkey()
