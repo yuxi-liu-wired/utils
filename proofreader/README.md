@@ -32,9 +32,11 @@ Implement key bindings for various functions.
 
 ### Key Bindings
 
+* `<UP>` and `<DOWN>`: Select the sentence.
 * `<LEFT>`: Move to the previous sentence pair.
 * `<RIGHT>`: Move to the next sentence pair.
-* `<SPACE>`: Jump to the next undecided pair. Display a message if all pairs are decided.
-* `<ESC>`: Mark the current pair as undecided.
-* `:<w>`: Overwrite the original file with current data.
-* `:<q>`: Quit the program.
+* `<ENTER>`: Jump to the next undecided pair. Display a message if all pairs are decided.
+* `<SPACE>`: Mark the current pair as undecided.
+* `w`: Overwrite the original file with current data.
+* `q`: Quit the program, asking for saving first.
+* `Q`: Quit the program without asking.
