@@ -23,5 +23,20 @@
     "a": "\\*Perceptron\\*",
     "b": "\\*Perceptrons\\*",
     "reason": "typo"
+  },
+  {
+    "a": "Lorenz transform",
+    "b": "Lorentz transform",
+    "reason": "typo"
+  },
+  {
+    "a": "Lorentz transform([^a])",
+    "b": "Lorentz transformation$1",
+    "reason": "typo"
+  },
+  {
+    "a": "ordinate transform([^a])",
+    "b": "ordinate transformation$1",
+    "reason": "typo"
   }
 ]

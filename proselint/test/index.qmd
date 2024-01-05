@@ -41,6 +41,8 @@ Sentence.Another sentence,without spaces...
 
 "multilayer perceptron", not "multilayered perceptron".
 
+Lorenz transform, Lorentz transform, Lorentz transformation, coordinate transform, coordinate transforms, coordinate transformations.
+
 $a_1, \dots, a_n$, not $a_1, ..., a_n$.
 
 $$
