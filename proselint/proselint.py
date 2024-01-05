@@ -1,7 +1,7 @@
 import re
 import sys
 import json
-
+import panflute as pf
 
 def colored(text, color):
     color_dict = {
@@ -65,7 +65,6 @@ def typo_lint(text):
         for match in matches:
             highlight_match(text, match, "red", reason)
 
-
 if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python script.py <filename>")
@@ -74,6 +73,10 @@ if __name__ == "__main__":
         try:
             with open(filename, "r") as file:
                 text = file.read()
+                if filename.endswith(".qmd"):
+                    print(
+                        f"Consider running `quarto render {filename} --to plain` first.".strip()
+                    )
                 quotation_lint(text)
                 typo_lint(text)
 
