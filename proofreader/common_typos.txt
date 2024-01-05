@@ -1,0 +1,5 @@
+(M|m)ultilayered (P|p)erceptron
+# $1ultilayer $2erceptron
+
+\*Perceptron\*
+# \*Perceptrons\*

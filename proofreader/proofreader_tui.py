@@ -99,11 +99,17 @@ def display_pairs(t, pairs, current_index):
         else t.bright_green_on_black
     )
 
-    wrap_width = 100
-    diff0 = split_into_chunks(diff[0], wrap_width)
-    diff1 = split_into_chunks(diff[1], wrap_width)
+    wrap_width = min(144, t.width - 4)
+    diff0 = textwrap.wrap(diff[0], wrap_width)
+    diff1 = []
+    for d in diff0:
+        l = len("".join(diff1))
+        diff1.append(diff[1][l : l + len(d)])
     diff2 = split_into_chunks(diff[2], wrap_width)
-    diff3 = split_into_chunks(diff[3], wrap_width)
+    diff3 = []
+    for d in diff2:
+        l = len("".join(diff3))
+        diff3.append(diff[3][l : l + len(d)])
 
     print(t.move_y(4))
     for i, (line0, line1) in enumerate(zip(diff0, diff1)):
@@ -152,15 +158,11 @@ def handle_keypress(t, key, pairs, current_index):
                     i
                     for i, p in enumerate(pairs)
                     if p.status == "undecided" and i > current_index
-                ),
-                current_index,
+                )
             )
         except StopIteration:
             try:
-                return next(
-                    (i for i, p in enumerate(pairs) if p.status == "undecided"),
-                    current_index,
-                )
+                return next((i for i, p in enumerate(pairs) if p.status == "undecided"))
             except:
                 raise StopIteration
     return current_index
@@ -209,14 +211,22 @@ def main():
                 save_pairs(filename, sentence_pairs)
             elif key == "h":
                 display_help(t)
-                t.inkey()
             else:
                 try:
                     current_index = handle_keypress(
                         t, key, sentence_pairs, current_index
                     )
                 except StopIteration:
-                    print(t.move_x(0) + t.move_y(0) + "All pairs decided!")
+                    print(
+                        t.home
+                        + t.move_xy(0, t.height // 2)
+                        + t.black_on_bright_blue(full_width(t, "  All pairs decided!"))
+                    )
+                    t.inkey()
+
+
+def full_width(t, text):
+    return text + " " * (t.width - len(text))
 
 
 if __name__ == "__main__":

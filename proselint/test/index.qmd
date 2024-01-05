@@ -30,3 +30,9 @@ American style makes no sense. It was supposedly designed to avoid "hanging whit
 In the next section, using the "pebble construction," they studied "Gamba perceptrons."
 
 Then they studied "Turing jumps."
+
+## Common typos
+
+*Perceptrons*, not *Perceptron*.
+
+"multilayer perceptron", not "multilayered perceptron".
