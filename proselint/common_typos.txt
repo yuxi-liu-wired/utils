@@ -3,3 +3,6 @@
 
 \*Perceptron\*
 # \*Perceptrons\*
+
+\$([^$]*)\.\.\.([^$]*)\$
+# $$$1\dots$2$

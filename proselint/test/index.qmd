@@ -36,3 +36,5 @@ Then they studied "Turing jumps."
 *Perceptrons*, not *Perceptron*.
 
 "multilayer perceptron", not "multilayered perceptron".
+
+$a_1, \dots, a_n$, not $a_1, ..., a_n$.

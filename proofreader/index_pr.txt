@@ -1,66 +1,125 @@
+a: Just like in Fourier analysis, by virtue of orthogonality, we can represent any well-behaved function on the $(-\infty, t]$ as an infinite sum of Laguerre functions
+[b]: Just like in Fourier analysis, by virtue of orthogonality, we can represent any well-behaved function on $(-\infty, t]$ as an infinite sum of Laguerre functions
+
+[a]: by taking a convolution with the Laguerre functions
+b: by taking convolution with the Laguerre functions
+
+a: With such $f$, we can multiply two voltages by $xy = (f(x+y) - f(x) - f(y)) \times 0.5$, and so we can construct any polynomial function in any number of variables.
+[b]: With such an $f$, we can multiply two voltages by $xy = (f(x+y) - f(x) - f(y)) \times 0.5$, and so we can construct any polynomial function in any number of variables.
+
+a: In the preface to the second edition of *Cybernetics*`<sub>`{=html}1961`</sub>`{=html} [@wienerCyberneticsControlCommunication2019, page xli], Wiener waxes praise about Gabor's breakthrough circuit device that could multiply two voltages at a frequency of $1\; \mathrm{kHz}$:
+[b]: In the preface to the second edition of *Cybernetics*<sub>1961</sub> [@wienerCyberneticsControlCommunication2019, page xli], Wiener waxes praise about Gabor's breakthrough circuit device that could multiply two voltages at a frequency of $1\; \mathrm{kHz}$:
+
+a: and so I decided to write this post for posterity as a simple sketch of another way to think about machine intelligence and machine life.
+[b]: and so I decided to write this post for posterity, as a simple sketch of another way to think about machine intelligence and machine life.
+
+a: A view of another universe, perhaps, or as the theoretical basis of some hard sci-fi to be written.
+[b]: A view of another universe, perhaps, or the theoretical basis of some hard sci-fi to be written.
+
+a: Wiener's terminology is occasionally obsolete, and unfortunately the subject of cybernetic artificial intelligence is essentially never updated since Wiener, so anyone trying to study the subject must contend with his publications.
+[b]: Wiener's terminology is occasionally obsolete; unfortunately, the subject of cybernetic artificial intelligence has essentially never been updated since Wiener, so anyone trying to study the subject must contend with his publications.
+
+a: The signal can take value in any space, but for convenience, we will only consider the case where $x$ is real-valued.
+[b]: The signal can take values in any space, but for convenience, we will only consider the case where $x$ is real-valued.
+
+a: The transducer is a function $T$, such that given any real-valued function $x : \R \to \R$, it returns a real-valued function $T[x] : \R \to \R$.
+[b]: The transducer is a function $T$ that, given any real-valued function $x : \R \to \R$, returns a real-valued function $T[x] : \R \to \R$.
+
+a: those involve mostly notational complications, with no new ideas.
+[b]: those mostly involve notational complications, with no new ideas.
+
+a: Those are not as famous as the trigonometric functions, but they are used in the same way as the trigonometric functions in Fourier analysis.
+[b]: They are not as famous as the trigonometric functions, but they are used in the same way as the trigonometric functions in Fourier analysis.
+
+a: The Laguerre functions makes the orthogonality cleaner:
+[b]: The Laguerre functions make the orthogonality cleaner:
+
+a: Directly compute the left side, and find that it equals $\sqrt\pi e^{2st}$.
+[b]: Directly compute the left-hand side and find that it equals $\sqrt\pi e^{2st}$.
+
+a: Now expand it in powers of $s, t$.
+[b]: Now expand it in powers of $s$ and $t$.
+
+[a]: Let $x(t)$ be a white noise process with variance $1/2$,
+b: Let $x(t)$ be a white noise process with a variance of $1/2$,
+
+[a]: for any fixed $t\in \R$, the random variables $c_0(t), c_1(t), ...$ are independent samples of the standard gaussian distribution $\mathcal N(0, 1/2)$.
+b: for any fixed $t \in \R$, the random variables $c_0(t), c_1(t), ...$ are independent samples of the standard Gaussian distribution $\mathcal N(0, 1/2)$.
+
+a: This signal is then decomposable as a linear sum of Laguerre functions $\sum_{n\geq 0} c_n(t) \psi_n(\tau)$, where $c_n(t)$ are the Laguerre coefficients.
+[b]: This signal can then be decomposed as a linear sum of Laguerre functions $\sum_{n\geq 0} c_n(t) \psi_n(\tau)$, with $c_n(t)$ as the Laguerre coefficients.
+
+a: It does not need to know the values of $c_0(t'), c_1(t'), c_2(t'), ...$ at any $t' \neq t$.
+[b]: It does not need the values of $c_0(t'), c_1(t'), c_2(t'), ...$ at any $t' \neq t$.
+
+[a]: However, @thm-laguerre-white-noise states that the Laguerre coefficients are stationary, meaning that we have [ergodicity](https://en.wikipedia.org/wiki/Ergodic_theory)[^1]: the ensemble average is the time average
+b: However, @thm-laguerre-white-noise states that the Laguerre coefficients are stationary, which means we have [ergodicity](https://en.wikipedia.org/wiki/Ergodic_theory)[^1]: the ensemble average is the time average,
+
+a: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
+[b]: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
+
+[a]: The integration-and-averaging can be done with a very-low-pass filter -- taking the average is essentially passing only the zero-frequency signal, and so it is the low-pass filter with the lowest possible passband.
+b: The integration and averaging can be done with a very-low-pass filter—taking the average is essentially passing only the zero-frequency signal, thus it is the low-pass filter with the lowest possible passband.
+
+[a]: We have reached the end of the road, facing an all-analog general-purpose learning machine.
+b: We have reached the end of the road, facing an all-analogue general-purpose learning machine.
+
+[a]: The fitted parameters can be automatically read and adjusted by electromechanical devices, such as relays and step motors, allowing us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
+b: The fitted parameters can be automatically read and adjusted by electromechanical devices such as relays and step motors, allowing us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
+
+[a]: As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are "philosophically similar" to this machine:
+b: As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are 'philosophically similar' to this machine:
+
+[a]: {{\< include ../../../static/\_macros.tex \>}}
+b: {{\< include ../../../static/_macros.tex \>}}
+
+a: In order to present Wiener's approach to nonlinear control theory, we need a small amount of theory of orthogonal polynomials.
+[b]: In order to present Wiener's approach to nonlinear control theory, we need a small amount of the theory of orthogonal polynomials.
+
+a: Those are not as famous as the trigonometric functions, but they are used in the same way as the trigonometric functions in Fourier analysis.
+[b]: They are not as famous as the trigonometric functions, but they are used in the same way as trigonometric functions in Fourier analysis.
+
+a: The Laguerre functions makes the orthogonality cleaner:
+b: The Laguerre functions make the orthogonality cleaner:
 
 a: Just like in Fourier analysis, by virtue of orthogonality, we can represent any well-behaved function on the $(-\infty, t]$ as an infinite sum of Laguerre functions
 b: Just like in Fourier analysis, by virtue of orthogonality, we can represent any well-behaved function on $(-\infty, t]$ as an infinite sum of Laguerre functions
 
 a: by taking a convolution with the Laguerre functions
-b: by taking convolution with the Laguerre functions
+b: by taking a convolution with the Laguerre functions.
 
 a: With such $f$, we can multiply two voltages by $xy = (f(x+y) - f(x) - f(y)) \times 0.5$, and so we can construct any polynomial function in any number of variables.
-b: With such an $f$, we can multiply two voltages by $xy = (f(x+y) - f(x) - f(y)) \times 0.5$, and so we can construct any polynomial function in any number of variables.
+b: With such an $f$, we can multiply two voltages by $xy = 0.5(f(x+y) - f(x) - f(y))$, and thus we can construct any polynomial function in any number of variables.
 
-a: In the preface to the second edition of *Cybernetics*`<sub>`{=html}1961`</sub>`{=html} [@wienerCyberneticsControlCommunication2019, page xli], Wiener waxes praise about Gabor's breakthrough circuit device that could multiply two voltages at a frequency of $1\; \mathrm{kHz}$:
-b: In the preface to the second edition of *Cybernetics*<sub>1961</sub> [@wienerCyberneticsControlCommunication2019, page xli], Wiener waxes praise about Gabor's breakthrough circuit device that could multiply two voltages at a frequency of $1\; \mathrm{kHz}$:
+a: To find the Laguerre coefficients of a signal, we need to perform a convolution.
+b: To find the Laguerre coefficients of a signal, we need to perform convolution.
 
 a: This gives a simple [filter bank](https://en.wikipedia.org/wiki/Filter_bank) that constructs the Laguerre coefficients for any signal.
-b: This gives a simple [filter bank](https://en.wikipedia.org/wiki/Filter_bank) that constructs the Laguerre coefficients for any signal.
+b: This yields a simple [filter bank](https://en.wikipedia.org/wiki/Filter_bank) that constructs the Laguerre coefficients for any signal.
 
-a: and so I decided to write this post for posterity as a simple sketch of another way to think about machine intelligence and machine life.
-b: and so I decided to write this post for posterity, as a simple sketch of another way to think about machine intelligence and machine life.
+a: For a given input signal $x : \R \to \R$, we pass it into the Laguerre filter bank.
+b: For a given input signal $x: \R \to \R$, we pass it into the Laguerre filter bank.
 
-a: A view of another universe, perhaps, or as the theoretical basis of some hard sci-fi to be written.
-b: A view of another universe, perhaps, or the theoretical basis of some hard sci-fi to be written.
+a: The coefficients depend on the cut-off time $t$, but do not depend on $\tau$, which is not "real" time, but only a kind of "relative historical time", as we look into the past standing at time $t$.
+b: The coefficients depend on the cut-off time $t$ but do not depend on $\tau", which is not "real" time but only a kind of "relative historical time", as we look into the past standing at time $t".
 
-a: Wiener's terminology is occasionally obsolete, and unfortunately the subject of cybernetic artificial intelligence is essentially never updated since Wiener, so anyone trying to study the subject must contend with his publications.
-b: Wiener's terminology is occasionally obsolete; unfortunately, the subject of cybernetic artificial intelligence has essentially never been updated since Wiener, so anyone trying to study the subject must contend with his publications.
-
-a: The signal can take value in any space, but for convenience, we will only consider the case where $x$ is real-valued.
-b: The signal can take values in any space, but for convenience, we will only consider the case where $x$ is real-valued.
-
-a: The transducer is a function $T$, such that given any real-valued function $x : \R \to \R$, it returns a real-valued function $T[x] : \R \to \R$.
-b: The transducer is a function $T$ that, given any real-valued function $x : \R \to \R$, returns a real-valued function $T[x] : \R \to \R$.
-
-a: those involve mostly notational complications, with no new ideas.
-b: those mostly involve notational complications, with no new ideas.
-
-a: Specifically, we need the Hermite and Laguerre polynomials.
-b: Specifically, we need the Hermite and Laguerre polynomials.
-
-a: Those are not as famous as the trigonometric functions, but they are used in the same way as the trigonometric functions in Fourier analysis.
-b: They are not as famous as the trigonometric functions, but they are used in the same way as the trigonometric functions in Fourier analysis.
-
-a: The Laguerre functions makes the orthogonality cleaner:
-b: The Laguerre functions make the orthogonality cleaner:
-
-a: Directly compute the left side, and find that it equals $\sqrt\pi e^{2st}$.
-b: Directly compute the left-hand side and find that it equals $\sqrt\pi e^{2st}$.
-
-a: Now expand it in powers of $s, t$.
-b: Now expand it in powers of $s$ and $t$.
-
-a: Let $x(t)$ be a white noise process with variance $1/2$,
-b: Let $x(t)$ be a white noise process with a variance of $1/2$,
-
-a: for any fixed $t\in \R$, the random variables $c_0(t), c_1(t), ...$ are independent samples of the standard gaussian distribution $\mathcal N(0, 1/2)$.
-b: for any fixed $t \in \R$, the random variables $c_0(t), c_1(t), ...$ are independent samples of the standard Gaussian distribution $\mathcal N(0, 1/2)$.
-
-a: This signal is then decomposable as a linear sum of Laguerre functions $\sum_{n\geq 0} c_n(t) \psi_n(\tau)$, where $c_n(t)$ are the Laguerre coefficients.
-b: This signal can then be decomposed as a linear sum of Laguerre functions $\sum_{n\geq 0} c_n(t) \psi_n(\tau)$, with $c_n(t)$ as the Laguerre coefficients.
+a: Note carefully that it is determined by $c_0(t), c_1(t), c_2(t), ...$ *at this very instant* $t$.
+b: Note carefully that it is determined by $c_0(t), c_1(t), c_2(t), \ldots$ *at this very instant* $t$.
 
 a: It does not need to know the values of $c_0(t'), c_1(t'), c_2(t'), ...$ at any $t' \neq t$.
-b: It does not need the values of $c_0(t'), c_1(t'), c_2(t'), ...$ at any $t' \neq t$.
+b: It does not need to know the values of $c_0(t'), c_1(t'), c_2(t'), \ldots$ at any $t' \neq t$.
 
-a: However, @thm-laguerre-white-noise states that the Laguerre coefficients are stationary, meaning that we have [ergodicity](https://en.wikipedia.org/wiki/Ergodic_theory)[^1]: the ensemble average is the time average
-b: However, @thm-laguerre-white-noise states that the Laguerre coefficients are stationary, which means we have [ergodicity](https://en.wikipedia.org/wiki/Ergodic_theory)[^1]: the ensemble average is the time average,
+a: That means that $T[x](t) = T(c_0(t), c_1(t), c_2(t), ...) \approx T(c_0(t), ..., c_n(t))$, with the approximation increasing in accuracy as $n$ increases.
+b: That means that $T[x](t) = T(c_0(t), c_1(t), c_2(t), \ldots) \approx T(c_0(t), \ldots, c_n(t))", with the approximation increasing in accuracy as $n$ increases.
+
+a: By our assumption that the transducer is analytic with respect to the input, $T(c_0(t), ..., c_n(t))$ has a multivariate Hermite serial expansion (the same idea as multivariate Taylor expansion):
+b: By our assumption that the transducer is analytic with respect to the input, $T(c_0(t), \ldots, c_n(t))$ has a multivariate Hermite serial expansion (the same idea as a multivariate Taylor expansion):
+
+a: The remaining challenge is to determine the coefficients $T_{m_0, ..., m_n}$.
+b: The remaining challenge is to determine the coefficients $T_{m_0, \ldots, m_n}$.
+
+a: This is where @thm-laguerre-white-noise comes to finish the construction.
+b: This is where @thm-laguerre-white-noise comes in to finish the construction.
 
 a: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
 b: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
@@ -68,95 +127,15 @@ b: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
 a: The integration-and-averaging can be done with a very-low-pass filter -- taking the average is essentially passing only the zero-frequency signal, and so it is the low-pass filter with the lowest possible passband.
 b: The integration and averaging can be done with a very-low-pass filter—taking the average is essentially passing only the zero-frequency signal, thus it is the low-pass filter with the lowest possible passband.
 
-a: We have reached the end of the road, facing an all-analog general-purpose learning machine.
-b: We have reached the end of the road, facing an all-analogue general-purpose learning machine.
-
 a: The fitted parameters can be automatically read and adjusted by electromechanical devices, such as relays and step motors, allowing us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
-b: The fitted parameters can be automatically read and adjusted by electromechanical devices such as relays and step motors, allowing us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
+b: The fitted parameters can be automatically read and adjusted by electromechanical devices such as relays and step motors, which allows us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
+
+a: If we have two such machines, and randomly set the parameters of one machine, then the other machine would learn to imitate the same behavior.
+b: If we have two such machines and randomly set the parameters of one, then the other machine would learn to imitate the same behavior.
 
 a: As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are "philosophically similar" to this machine:
-b: As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are 'philosophically similar' to this machine:
+b: As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are "philosophically similar" to this machine.
 
-a {{\< include ../../../static/\_macros.tex \>}}
-b {{\< include ../../../static/_macros.tex \>}}
+a: It seems like this device, as it stands, would be plagued by the same issues that plague a general analog computer -- error correction, bad gains, and intractable nonlinearities.
+b: It seems that this device, as it stands, would be plagued by the same issues that plague a general analog computer—error correction, bad gains, and intractable nonlinearities.
 
-a In order to present Wiener's approach to nonlinear control theory, we need a small amount of theory of orthogonal polynomials.
-b In order to present Wiener's approach to nonlinear control theory, we need a small amount of the theory of orthogonal polynomials.
-
-a Specifically, we need the Hermite and Laguerre polynomials.
-b Specifically, we need the Hermite and Laguerre polynomials.
-
-a Those are not as famous as the trigonometric functions, but they are used in the same way as the trigonometric functions in Fourier analysis.
-b They are not as famous as the trigonometric functions, but they are used in the same way as trigonometric functions in Fourier analysis.
-
-a The Laguerre functions makes the orthogonality cleaner:
-b The Laguerre functions make the orthogonality cleaner:
-
-a Just like in Fourier analysis, by virtue of orthogonality, we can represent any well-behaved function on the $(-\infty, t]$ as an infinite sum of Laguerre functions
-b Just like in Fourier analysis, by virtue of orthogonality, we can represent any well-behaved function on $(-\infty, t]$ as an infinite sum of Laguerre functions
-
-a by taking a convolution with the Laguerre functions
-b by taking a convolution with the Laguerre functions.
-
-a With such $f$, we can multiply two voltages by $xy = (f(x+y) - f(x) - f(y)) \times 0.5$, and so we can construct any polynomial function in any number of variables.
-b With such an $f$, we can multiply two voltages by $xy = 0.5(f(x+y) - f(x) - f(y))$, and thus we can construct any polynomial function in any number of variables.
-
-a To find the Laguerre coefficients of a signal, we need to perform a convolution.
-b To find the Laguerre coefficients of a signal, we need to perform convolution.
-
-a This gives a simple [filter bank](https://en.wikipedia.org/wiki/Filter_bank) that constructs the Laguerre coefficients for any signal.
-b This yields a simple [filter bank](https://en.wikipedia.org/wiki/Filter_bank) that constructs the Laguerre coefficients for any signal.
-
-a For a given input signal $x : \R \to \R$, we pass it into the Laguerre filter bank.
-b For a given input signal $x: \R \to \R$, we pass it into the Laguerre filter bank.
-
-a The readouts from the filter bank are the signals $c_0(t), c_1(t), ...$.
-b The readouts from the filter bank are the signals $c_0(t), c_1(t), \ldots$.
-
-a They satisfy the equation
-b They satisfy the equation
-
-a The coefficients depend on the cut-off time $t$, but do not depend on $\tau$, which is not "real" time, but only a kind of "relative historical time", as we look into the past standing at time $t$.
-b The coefficients depend on the cut-off time $t$ but do not depend on $\tau", which is not "real" time but only a kind of "relative historical time", as we look into the past standing at time $t".
-
-a Note carefully that it is determined by $c_0(t), c_1(t), c_2(t), ...$ *at this very instant* $t$.
-b Note carefully that it is determined by $c_0(t), c_1(t), c_2(t), \ldots$ *at this very instant* $t$.
-
-a It does not need to know the values of $c_0(t'), c_1(t'), c_2(t'), ...$ at any $t' \neq t$.
-b It does not need to know the values of $c_0(t'), c_1(t'), c_2(t'), \ldots$ at any $t' \neq t$.
-
-a That means that $T[x](t) = T(c_0(t), c_1(t), c_2(t), ...) \approx T(c_0(t), ..., c_n(t))$, with the approximation increasing in accuracy as $n$ increases.
-b That means that $T[x](t) = T(c_0(t), c_1(t), c_2(t), \ldots) \approx T(c_0(t), \ldots, c_n(t))", with the approximation increasing in accuracy as $n$ increases.
-
-a By our assumption that the transducer is analytic with respect to the input, $T(c_0(t), ..., c_n(t))$ has a multivariate Hermite serial expansion (the same idea as multivariate Taylor expansion):
-b By our assumption that the transducer is analytic with respect to the input, $T(c_0(t), \ldots, c_n(t))$ has a multivariate Hermite serial expansion (the same idea as a multivariate Taylor expansion):
-
-a The remaining challenge is to determine the coefficients $T_{m_0, ..., m_n}$.
-b The remaining challenge is to determine the coefficients $T_{m_0, \ldots, m_n}$.
-
-a This is where @thm-laguerre-white-noise comes to finish the construction.
-b This is where @thm-laguerre-white-noise comes in to finish the construction.
-
-a However, @thm-laguerre-white-noise states that the Laguerre coefficients are stationary, meaning that we have [ergodicity](https://en.wikipedia.org/wiki/Ergodic_theory)[^1]: the ensemble average is the time average, and so
-b However, @thm-laguerre-white-noise states that the Laguerre coefficients are stationary, meaning that we have [ergodicity](https://en.wikipedia.org/wiki/Ergodic_theory)[^1]: the ensemble average is the time average, and so
-
-a That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
-b That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
-
-a The integration-and-averaging can be done with a very-low-pass filter -- taking the average is essentially passing only the zero-frequency signal, and so it is the low-pass filter with the lowest possible passband.
-b The integration and averaging can be done with a very-low-pass filter—taking the average is essentially passing only the zero-frequency signal, thus it is the low-pass filter with the lowest possible passband.
-
-a The fitted parameters can be automatically read and adjusted by electromechanical devices, such as relays and step motors, allowing us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
-b The fitted parameters can be automatically read and adjusted by electromechanical devices such as relays and step motors, which allows us to connect the machine in parallel with an unknown transducer, run it for a period over a white noise input, and ultimately achieve a machine that precisely imitates the unknown transducer.
-
-a If we have two such machines, and randomly set the parameters of one machine, then the other machine would learn to imitate the same behavior.
-b If we have two such machines and randomly set the parameters of one, then the other machine would learn to imitate the same behavior.
-
-a And since each parameter setting creates a different behavior, *purely by imitating behavior*, the parameters would be copied from one machine to the other.
-b And since each parameter setting creates a different behavior, *purely by imitating behavior*, the parameters would be copied from one machine to the other.
-
-a As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are "philosophically similar" to this machine:
-b As Wiener speculated [@wienerCyberneticsControlCommunication2019, pages 248-249], biological learning and reproduction are "philosophically similar" to this machine.
-
-a It seems like this device, as it stands, would be plagued by the same issues that plague a general analog computer -- error correction, bad gains, and intractable nonlinearities.
-b It seems that this device, as it stands, would be plagued by the same issues that plague a general analog computer—error correction, bad gains, and intractable nonlinearities.
