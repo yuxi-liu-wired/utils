@@ -1,5 +1,6 @@
 import re
 import sys
+import json
 
 
 def colored(text, color):
@@ -13,7 +14,7 @@ def colored(text, color):
     return f"{start}{text}{end}"
 
 
-def highlight_match(text, match, color):
+def highlight_match(text, match, color, reason=""):
     start_context = max(0, match.start() - 30)
     end_context = min(len(text), match.end() + 30)
 
@@ -24,7 +25,7 @@ def highlight_match(text, match, color):
     highlighted_match = f"{before_match}{colored(matched_text, color)}{after_match}"
     line_number = text[: match.start()].count("\n") + 1
     char_number = match.start() - text[: match.start()].rfind("\n")
-    print(f"line {line_number}, char {char_number}:")
+    print(f"line {line_number}, char {char_number}: {reason}")
     print(highlighted_match + "\n")
 
 
@@ -48,24 +49,21 @@ def quotation_lint(text):
 
 
 def typo_lint(text):
-    # Read patterns from `common_typos.txt`
-    file_path = "common_typos.txt"
-    regex_patterns = []
+    print("Checking for common typos...\n")
+    file_path = "common_typos.json"
     try:
         with open(file_path, "r") as file:
-            for line in file:
-                pattern = line.strip()
-                if pattern and not pattern.startswith("#"):
-                    regex_patterns.append(rf"{pattern}")
+            json_file = json.load(file)
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
         return
-    # Print matches
-    print("Checking for common typos...\n")
-    for pattern in regex_patterns:
-        matches = re.finditer(pattern, text)
+    for rule in json_file:
+        pattern = rule["a"].strip()
+        search_pattern = rf"{pattern}"
+        reason = rule["reason"].strip()
+        matches = re.finditer(search_pattern, text)
         for match in matches:
-            highlight_match(text, match, "red")
+            highlight_match(text, match, "red", reason)
 
 
 if __name__ == "__main__":

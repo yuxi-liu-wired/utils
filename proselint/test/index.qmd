@@ -31,6 +31,10 @@ In the next section, using the "pebble construction," they studied "Gamba percep
 
 Then they studied "Turing jumps."
 
+## Other punctuations
+
+Sentence.Another sentence,without spaces...
+
 ## Common typos
 
 *Perceptrons*, not *Perceptron*.
@@ -38,3 +42,16 @@ Then they studied "Turing jumps."
 "multilayer perceptron", not "multilayered perceptron".
 
 $a_1, \dots, a_n$, not $a_1, ..., a_n$.
+
+$$
+\text{this also applies within long formulas } ...
+$$
+
+Because Rmarkdown and Quarto does not play well with the slash-bracket notation, we should avoid it. For example, the following should throw an error.
+
+\(E = mc^2\) can be expanded into \(E = m_0c^2 + \frac 12 mv^2 + \dots\). That is,
+
+$$
+E = m_0c^2 + \frac 12 mv^2 + \dots
+$$
+
