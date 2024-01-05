@@ -1,0 +1,32 @@
+---
+title: "Reading *Perceptrons*"
+author: "Yuxi Liu"
+date: "2023-12-21"
+date-modified: "2023-12-29"
+
+categories: [AI, math]
+format:
+    html:
+        toc: true
+
+description: "A long, hard stare into the math of *Perceptrons*, the mythical neural network killer."
+image: "figure/banner_cropped.jpg"
+
+status: "finished"
+confidence: "certain"
+importance: 3
+---
+
+{{< include ../../../static/_macros.tex >}}
+
+> It would seem that *Perceptrons* has much the same role as The Necronomicon -- that is, often cited but never read.
+>
+> Marvin Minsky, 1994. Quoted in [@berkeleyRevisionistHistoryConnectionism1997]
+
+## Quotation mark errors
+
+American style makes no sense. It was supposedly designed to avoid "hanging white spaces." However, it breaks the "substitutional equivalence," as any mathematician can tell you, a "humanist;" whereas we hold these truths to be "self-evident," that not all humanoids understand the importance of "logical consistency:" and so on...
+
+In the next section, using the "pebble construction," they studied "Gamba perceptrons."
+
+Then they studied "Turing jumps."
