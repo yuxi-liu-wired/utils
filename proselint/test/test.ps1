@@ -1,0 +1,1 @@
+python ..\proselint.py .\index.qmd

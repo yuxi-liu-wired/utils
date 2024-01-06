@@ -1,7 +1,7 @@
 import re
 import sys
 import json
-import panflute as pf
+import my_filters
 
 def colored(text, color):
     color_dict = {
@@ -41,7 +41,7 @@ def quotation_lint(text):
     ->
     In the next section, using the "pebble construction", they studied "Gamba perceptrons".
     """
-    pattern = re.compile(r'([?.,;:!])"([^?.,;:!$]|$)')
+    pattern = re.compile(r'([?.,:!])"([^?.,:!$]|$)')
     matches = pattern.finditer(text)
     print("Checking for logical quotation standards...\n")
     for match in matches:
@@ -52,7 +52,7 @@ def typo_lint(text):
     print("Checking for common typos...\n")
     file_path = "common_typos.json"
     try:
-        with open(file_path, "r") as file:
+        with open(file_path, "r", encoding="utf8") as file:
             json_file = json.load(file)
     except FileNotFoundError:
         print(f"Error: File '{file_path}' not found.")
@@ -74,9 +74,7 @@ if __name__ == "__main__":
             with open(filename, "r") as file:
                 text = file.read()
                 if filename.endswith(".qmd"):
-                    print(
-                        f"Consider running `quarto render {filename} --to plain` first.".strip()
-                    )
+                    text = my_filters.qmd_to_txt(text)
                 quotation_lint(text)
                 typo_lint(text)
 
