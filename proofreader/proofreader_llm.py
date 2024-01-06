@@ -1,6 +1,6 @@
 import panflute as pf
 import re
-
+import sys
 
 def my_filter(doc):
     bad_blocks = [pf.BlockQuote]
@@ -77,19 +77,20 @@ b: <rewritten sentence>
 ...
 
 Reply only rewritten sentences. Every sentence MUST be on one line ONLY, that is, both <original sentence> and <rewritten sentence> MUST contain no newline character.
-If a sentence is not rewritten, DO NOT REPLY IT. Do not reply anything else. If the text requires no change, return an empty string.
-Do not use American-style quotation. Use logical quotation. DO NOT USE SINGLE QUOTATION MARKS. 
+Every rewritten sentence MUST differ from its original sentence.
+Do not use American-style quotation. Use logical quotation. Do not use single quotation marks.
+Do not use en-dash or em-dashes -- use double or triple hyphens. Do not use unicode ellipsis -- use three dots.
 """.strip()
     example_user_1 = """
-We use the convention putting derivative on the rows. This convention simplifies a lot of equations, and completely avoids transposing any matrix.
+We use the convention putting derivative on the rows – for convenience… This convention simplifies a lot of equations, and completely avoids transposing any matrix.
 
 In the next section, using the "pebble construction," they studied "Gamba perceptrons." They stated "MLPs are essentially Gamba perceptrons."
     """.strip()
     example_assistant_1 = """
-a: We use the convention putting derivative on the rows.
-b: We use the convention of putting the derivatives on the rows.
+a: We use the convention putting derivative on the rows – for convenience…
+b: We use the convention of putting the derivatives on the rows -- for convenience...
 
-a: In the next section, using the "pebble construction," they studied "Gamba perceptrons."
+a: In the next section using the "pebble construction," they studied "Gamba perceptrons."
 b: In the next section, using the "pebble construction", they studied "Gamba perceptrons".
 
 a: They stated "MLPs are essentially Gamba perceptrons."
@@ -116,6 +117,10 @@ from fuzzysearch import find_near_matches
 from warnings import warn
 
 
+# Despite trying my best, GPT4 still sometimes returns a line that is not in the original text.
+# and sometimes it returns a "modified" line that is literally the same as the original line.
+# This function tries to fix the first problem.
+# The second problem is not fixed here, though it is easier to fix by filtering the proofread.txt file.
 def process_response(response, original_text="", max_l_dist=10):
     text = response.choices[0].message.content
     # Check that the input sequence satisfies a certain format
@@ -186,6 +191,13 @@ def get_proofread_files(input_file, proofread_file, max_chars=4_000):
     except ValueError as e:
         raise e
 
-
 if __name__ == "__main__":
-    get_proofread_files("index.qmd", "index_pr.txt", max_chars=4_000)
+    if len(sys.argv) < 4:
+        print("Usage: script.py <input_file> <output_file> <max_chars>")
+        sys.exit(1)
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    max_chars = int(sys.argv[3])
+
+    get_proofread_files(input_file, output_file, max_chars=max_chars)
