@@ -43,5 +43,30 @@
     "a": "ordinate transform([^a])",
     "b": "ordinate transformation$1",
     "reason": "typo"
+  },
+  {
+    "a": "[Oo]bvious(ly)?",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "[Cc]lear(ly)?",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "is (not hard|easy|obvious|plain) to",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "[Ii]t is( [a-zA-Z]* )*that",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "[Ii]t is a( [a-zA-Z]* )*that",
+    "b": "",
+    "reason": "meaningless"
   }
 ]
