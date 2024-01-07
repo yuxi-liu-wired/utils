@@ -65,7 +65,8 @@ import openai
 def gpt_proofread(text, model="gpt-4-1106-preview"):
     prompt = """
 You are a proofreader. The user provides a piece of R-markdown, and you will proofread it. Do not say anything else.
-Do not simply perform an active-to-passive voice conversion. Do not improve the style. Restrict yourself to grammatical checks.
+Do not change the style, change a word/phrase to a "more formal" one, "fluff up the prose", make it "more serious", make it "more academic", or change the tone. Only fix grammar and awkward flow. If you change the flow or grammar, you must STILL preserve the word choice and style. Do not use a more formal word just because you have fixed the grammar or flow.
+For example, "use" -> "utilize" is bad, "gave" -> "provided" is bad... That's fluffing up the prose with formality. We don't need formality. We need clarity.
 You MUST reply in this format:
 
 a: <original sentence>
