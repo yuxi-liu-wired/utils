@@ -25,7 +25,7 @@ confidence: "certain"
 importance: 0
 ---
 
-{{< include ../../../static/_macros.tex >}}
+{{< include ../../../utils/blog_utils/_macros.tex >}}
 
 ## Relativity, in general
 
