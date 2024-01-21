@@ -1,24 +1,6 @@
-import panflute as pf
 import re
 import sys
-
-def my_filter(doc):
-    bad_blocks = [pf.BlockQuote]
-    filtered_doc = []
-    for _, x in enumerate(doc):
-        if type(x) in bad_blocks:
-            continue
-        markdown_output = pf.convert_text(
-            x, input_format="panflute", output_format="markdown"
-        )
-        markdown_output_single_line = re.sub(
-            r"([^\n])\n([^\n])", r"\1 \2", markdown_output
-        )
-        markdown_output_single_line = re.sub(r"  +", r" ", markdown_output_single_line)
-        filtered_doc.append(markdown_output_single_line)
-        # filtered_doc += markdown_output_single_line.split('. ')
-    return filtered_doc
-
+import my_filters
 
 def split_into_chunks(paragraphs, max_chars):
     """
@@ -175,9 +157,9 @@ def process_response(response, original_text="", max_l_dist=10):
 def get_proofread_files(input_file, proofread_file, max_chars=4_000):
     with open(input_file, "r", encoding="utf8") as file:
         input_markdown = file.read()
-    doc = pf.convert_text(input_markdown)
+    markdown_text = my_filters.qmd_to_txt(input_markdown)
     try:
-        chunks = split_into_chunks(my_filter(doc), max_chars=max_chars)
+        chunks = split_into_chunks(markdown_text, max_chars=max_chars)
         print(f"{len(chunks)} chunks")
         for i, chunk in enumerate(chunks):
             input_string = "\n\n".join(chunk).strip()
