@@ -20,6 +20,11 @@
     "reason": "scrunched up punctuation"
   },
   {
+    "a": " ([\"']) ",
+    "b": "$1",
+    "reason": "Quote marks should be adjacent to something"
+  },
+  {
     "a": "(M|m)ultilayered (P|p)erceptron",
     "b": "$1ultilayer $2erceptron",
     "reason": "typo"
