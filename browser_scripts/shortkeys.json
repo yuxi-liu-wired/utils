@@ -1,0 +1,104 @@
+[
+    {
+      "action": "javascript",
+      "blacklist": false,
+      "code": "function getSelectionText() {\n    var text = \"\";\n    if (window.getSelection) {\n        text = window.getSelection().toString();\n    } else if (document.selection && document.selection.type != \"Control\") {\n        text = document.selection.createRange().text;\n    }\n    return text;\n}\n\nvar win = window.open(\"https://duckduckgo.com/?q=\".concat(getSelectionText()), '_blank');\nwin.focus();",
+      "customName": "New Duckduckgo search",
+      "exported": false,
+      "key": "alt+'",
+      "open": false,
+      "sites": "*mail.google.com*",
+      "sitesArray": [
+        "*mail.google.com*"
+      ],
+      "label": "search highlighted text",
+      "activeInInputs": true
+    },
+    {
+      "action": "javascript",
+      "blacklist": false,
+      "code": "var win = window.open(\"https://sci-hubtw.hkvisa.net/\".concat(window.location.href), '_blank');\nwin.focus();",
+      "customName": "Sci-Hub",
+      "exported": false,
+      "key": "alt+shift+'",
+      "open": false,
+      "sites": "*mail.google.com*",
+      "sitesArray": [
+        "*mail.google.com*"
+      ],
+      "label": "open Sci-Hub",
+      "activeInInputs": true
+    },
+    {
+      "key": "alt+shift+w",
+      "label": "open Wiktionary",
+      "action": "javascript",
+      "code": "function getSelectionText() {\n    var text = \"\";\n    if (window.getSelection) {\n        text = window.getSelection().toString();\n    } else if (document.selection && document.selection.type != \"Control\") {\n        text = document.selection.createRange().text;\n    }\n    return text;\n}\n\nvar win = window.open(\"https://en.wiktionary.org/wiki/\".concat(getSelectionText().toLowerCase()), '_blank');\nwin.focus();",
+      "blacklist": false,
+      "sites": "",
+      "sitesArray": [
+        ""
+      ],
+      "activeInInputs": true
+    },
+    {
+      "key": "alt+w",
+      "label": "open Wikipedia",
+      "action": "javascript",
+      "code": "function getSelectionText() {\n    var text = \"\";\n    if (window.getSelection) {\n        text = window.getSelection().toString();\n    } else if (document.selection && document.selection.type != \"Control\") {\n        text = document.selection.createRange().text;\n    }\n    return text;\n}\n\nvar win = window.open(\"https://en.wikipedia.org/wiki/\".concat(getSelectionText()), '_blank');\nwin.focus();",
+      "sites": "",
+      "sitesArray": [
+        ""
+      ],
+      "activeInInputs": true,
+      "blacklist": false
+    },
+    {
+      "key": "alt+shift+h",
+      "label": "open Internet Archive, last version",
+      "action": "javascript",
+      "blacklist": false,
+      "code": "var win = window.open(\"https://web.archive.org/web/2/\".concat(window.location.href), '_blank');\nwin.focus();",
+      "sites": "",
+      "sitesArray": [
+        ""
+      ],
+      "activeInInputs": true
+    },
+    {
+      "key": "alt+shift+ctrl+h",
+      "label": "open Internet Archive, first version",
+      "action": "javascript",
+      "code": "var win = window.open(\"https://web.archive.org/web/0/\".concat(window.location.href), '_blank');\nwin.focus();",
+      "blacklist": false,
+      "sites": "",
+      "sitesArray": [
+        ""
+      ],
+      "activeInInputs": true
+    },
+    {
+      "key": "ctrl+b",
+      "label": "customized duckduckgo bang ",
+      "action": "javascript",
+      "blacklist": false,
+      "activeInInputs": true,
+      "code": "function getSelectionText() {\n    var text = \"\";\n    if (window.getSelection) {\n        text = window.getSelection().toString();\n    } \n    else if (document.selection && document.selection.type != \"Control\") {\n        text = document.selection.createRange().text;\n    }\n    return text;\n}\n\nfunction main() {\nvar queryText = escape(getSelectionText()); \nif (queryText === '') {return 0;}\n\n// the mapping of custom bangs\nvar customBangs = new Map([\n// -------------------------------------------------------------------------------- dictionary\n  [\"t\", \"https://duckduckgo.com/?q=!wt%20\"],\n// -------------------------------------------------------------------------------- libraries //\n  [\"bk\", \"https://search.library.berkeley.edu/discovery/search?tab=Default_UCLibrarySearch&search_scope=DN_and_CI&vid=01UCS_BER:UCB&mfacet=tlevel,include,available_p,1&offset=0&query=any,contains,\"],\n  [\"lg\", \"http://libgen.rs/search.php?req=\"],\n  [\"ar\", \"https://archive.org/search.php?query=\"],\n// -------------------------------------------------------------------------------- journals //\n  [\"gs\", \"https://scholar.google.com/scholar?lr=lang_en|lang_de&q=\"],\n  [\"j\", \"https://www.jstor.org/action/doBasicSearch?Query=\"],\n// -------------------------------------------------------------------------------- video websites //\n  [\"y\", \"https://www.youtube.com/results?search_query=\"],\n  [\"bb\", \"https://search.bilibili.com/all?keyword=\"],\n  [\"pb\", \"https://thepiratebay.org/search.php?all=on&search=Pirate+Search&page=0&q=\"]\n]);\n\nvar bang = window.prompt(\"Banging whom?\");\nif (!bang) {return 0;}\n\nvar prefix = customBangs.has(bang) ? customBangs.get(bang) : \"https://duckduckgo.com/?q=!\".concat(bang).concat(\" \")\n\nvar url = prefix.concat(queryText);\nvar win = window.open(url, '_blank');\nwin.focus();\n}\n\nmain();",
+      "sites": "",
+      "sitesArray": [
+        ""
+      ]
+    },
+    {
+      "key": "ctrl+y",
+      "label": "open YouTube",
+      "action": "javascript",
+      "blacklist": false,
+      "code": "function getSelectionText() {\n    var text = \"\";\n    if (window.getSelection) {\n        text = window.getSelection().toString();\n    } else if (document.selection && document.selection.type != \"Control\") {\n        text = document.selection.createRange().text;\n    }\n    return text;\n}\n\nvar win = window.open(\"https://www.youtube.com/results?search_query=\".concat(getSelectionText()), '_blank');\nwin.focus();",
+      "activeInInputs": true,
+      "sites": "",
+      "sitesArray": [
+        ""
+      ]
+    }
+  ]

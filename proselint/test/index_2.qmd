@@ -1,0 +1,114 @@
+---
+title: "The Wigner Rotation in Special Relativity via Hyperbolic Geometry"
+author: "Yuxi Liu"
+date: "2018-05"
+date-modified: "2023-12-14"
+categories: ["physics", "math", "fun"]
+execute:
+    cache: false
+format:
+  html:
+    resources:
+        - "figure/**"
+    toc: true
+    toc-location: body
+    code-tools: true
+    include-in-header:
+      text: |
+        <script type="text/javascript" charset="UTF-8" src="./static/jsxgraphcore.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="./static/p5.min.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="./static/math.min.js"></script>
+description: "The *other* special relativity paradox that you have never heard of."
+image: "figure/discrete_lorentz_rapidity_0.1_boosts_17.png"
+status: "finished"
+confidence: "certain"
+importance: 0
+---
+
+{{< include ../../../utils/blog_utils/_macros.tex >}}
+
+## Relativity, in general
+
+### The Erlangen program
+
+In the eyes of a geometer, special relativity is not mysterious, but it is simply another geometry that resembles our familiar Euclidean geometry of the plane, and the spherical geometry of the earth. Just like how Euclid compressed the geometry of the plane into around 20 axioms, we can compress the geometry of spacetime into the following axioms:
+
+* Spacetime is a smooth structure, shaped like[^shaped-like] the real vector space $\R^{n+1}$, where $n$ is the number of spatial dimensions, and $1$ is the number of temporal dimensions.
+* Spacetime is symmetric under rotation, translation, and constant velocity motion.
+* There exists a fundamental speed, a "conversion factor" between the spatial and temporal dimensions, which we call $c$.
+* There are many ways to map spacetime into $\R^{n+1}$, but only some of them are physically meaningful. Those are called the **(inertial) coordinate systems**.
+* You can go from any one coordinate system to any other by a **coordinate transformation**.
+* Transformations can be combined one after another, and they can be reversed. That is, they make up a group, named the **symmetry group of spacetime**.
+* The symmetry group is smooth and connected, meaning that starting with the "do-nothing" identity transformation, you can combine it with tiny transformations, and end up at any other transformation.
+
+Do not worry if some terms were used without a precise definition. You can start with your best intuitive guess, and sculpt them as we go.
+
+[^shaped-like]: In jargon, it is isomorphic as a smooth manifold to $\R^{n+1}$, or diffeomorphic to $\R^{n+1}$.
+
+We will follow the spirit of Erlangen program, which states clearly what our target is [@kleinComparativeReviewRecent1893]:
+
+> Given a manifoldness [smooth space] and a group of transformations of the same; to develop theory of invariants relating to that group. This is the general problem, and it comprehends not alone ordinary geometry, but also and in particular the more recent geometrical theories which we propose to discuss, and the different methods of treating manifoldnesses of $n$ dimensions.
+
+Considering that Felix Klein first stated it in 1872, decades before special relativity, this is prescient.
+
+Applied to special relativity, our target is to start with the axioms, find out something about what kinds of symmetries there can be, and what kinds of objects are unchanged by symmetries. In other words, we will study the geometry of spacetime.
+
+### Physics and mathematics
+
+> As far as the laws of mathematics refer to reality, they are not certain; and as far as they are certain, they do not refer to reality.
+>
+> > Nested quotes
+
+```{python}
+#| label: three-infinitesimal-boosts
+#| eval: false
+#| echo: false
+#| fig-cap: "Three infinitesimal boosts"
+import matplotlib.pyplot as plt
+import numpy as np
+
+```
+
+```{=html}
+<div id="discrete-lorentz-1d" style="display: flex; justify-content: center;"></div>
+<div  style="display: grid; place-items: center;">
+<div>
+  <input type="range" id="rSlider" name="rSlider" value="0.2" min="0.05" max="0.2" step="0.05"
+          oninput="document.getElementById('rValue').textContent = this.value;" />
+  <label for="rSlider">Rapidity = <span id="rValue">0.05</span></label>
+</div>
+<div>
+  <input type="range" id="lineNumberSlider" name="lineNumberSlider" value="1" min="0" max="20" step="1"
+            oninput="document.getElementById('lineNumberValue').textContent = this.value;" />
+  <label for="lineNumberSlider">Number of boosts = <span id="lineNumberValue">1</span></label>
+</div>
+```
+
+![Three infinitesimal boosts](figure/three-infinitesimal-boosts-output-1.png){width=60%}
+
+![Four infinitesimal boosts! [@lightmanProblemBookRelativity1975]](figure/three-infinitesimal-boosts-output-1.png){width=60%}
+
+<https://www.wikipedia.org/>
+
+[Wikipedia!](https://www.wikipedia.org/)
+
+In the diagram, $v$ is "rapidity"[^rapidity-name]. We apply the Lorentz boost with the given $v$ repeatedly forwards and backwards. The resulting image is beautiful and suggestive: it looks like the unit hyperbolas!
+
+[^rapidity-name]: The reason for calling it "rapidity", instead of "velocity" would be soon clear.
+
+```{=html}
+<div style="display: flex; justify-content: center;">
+    <img src="figure/discrete_lorentz_rapidity_0.1_boosts_17.png" style="width: 400px; height: 400px;">
+</div>
+```
+
+> [Gauss] makes his mathematics like a fox, wiping out the traces in the sand with his tail.
+>
+> --- [unnamed German student, as reported by Abel](https://web.archive.org/web/20230624170306/https://hsm.stackexchange.com/questions/3610/what-is-the-original-source-for-abels-quote-about-gausshe-is-like-the-fox-wh)
+
+> Problem 1.28. What is the least number of pure boosts which generate an arbitrary Lorentz transformation? Note: This is a difficult problem! [@lightmanProblemBookRelativity1975]
+
+[^angel-devil-geometry]:
+    > In these days the angel of topology and the devil of abstract algebra fight for the soul of each individual mathematical domain. 
+    > 
+    > --- Hermann Weyl

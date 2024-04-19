@@ -5,14 +5,24 @@
     "reason": "Use $...$ instead of \\(...\\) in LaTeX"
   },
   {
-    "a": "\\$([^$]*)\\.\\.\\.([^$]*)\\$",
+    "a": "\\$([^$\\n]*)\\.\\.\\.([^$\\n]*)\\$",
     "b": "$$$1$$",
     "reason": "Use \\dots instead of ... in $...$."
+  },
+  {
+    "a": "\\$\\$(\\n?[^$]*)\\.\\.\\.([^$]*\\n?)\\$\\$",
+    "b": "$$$$$1$$$$",
+    "reason": "Use \\dots instead of ... in $$...$$."
   },
   {
     "a": "([a-zA-Z\"])([,.;:?!])([a-zA-Z])",
     "b": "$1$2 $3",
     "reason": "scrunched up punctuation"
+  },
+  {
+    "a": " ([\"']) ",
+    "b": "$1",
+    "reason": "Quote marks should be adjacent to something"
   },
   {
     "a": "(M|m)ultilayered (P|p)erceptron",
@@ -38,5 +48,30 @@
     "a": "ordinate transform([^a])",
     "b": "ordinate transformation$1",
     "reason": "typo"
+  },
+  {
+    "a": "[Oo]bvious(ly)?",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "[Cc]lear(ly)?",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "is (not hard|easy|obvious|plain) to",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "[Ii]t is( [a-zA-Z]* )*that",
+    "b": "",
+    "reason": "meaningless"
+  },
+  {
+    "a": "[Ii]t is a( [a-zA-Z]* )*that",
+    "b": "",
+    "reason": "meaningless"
   }
 ]

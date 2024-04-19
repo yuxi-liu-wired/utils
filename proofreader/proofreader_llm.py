@@ -1,24 +1,6 @@
-import panflute as pf
 import re
-
-
-def my_filter(doc):
-    bad_blocks = [pf.BlockQuote]
-    filtered_doc = []
-    for _, x in enumerate(doc):
-        if type(x) in bad_blocks:
-            continue
-        markdown_output = pf.convert_text(
-            x, input_format="panflute", output_format="markdown"
-        )
-        markdown_output_single_line = re.sub(
-            r"([^\n])\n([^\n])", r"\1 \2", markdown_output
-        )
-        markdown_output_single_line = re.sub(r"  +", r" ", markdown_output_single_line)
-        filtered_doc.append(markdown_output_single_line)
-        # filtered_doc += markdown_output_single_line.split('. ')
-    return filtered_doc
-
+import sys
+import my_filters
 
 def split_into_chunks(paragraphs, max_chars):
     """
@@ -65,7 +47,8 @@ import openai
 def gpt_proofread(text, model="gpt-4-1106-preview"):
     prompt = """
 You are a proofreader. The user provides a piece of R-markdown, and you will proofread it. Do not say anything else.
-Do not simply perform an active-to-passive voice conversion. Do not improve the style. Restrict yourself to grammatical checks.
+Do not change the style, change a word/phrase to a "more formal" one, "fluff up the prose", make it "more serious", make it "more academic", or change the tone. Only fix grammar and awkward flow. If you change the flow or grammar, you must STILL preserve the word choice and style. Do not use a more formal word just because you have fixed the grammar or flow.
+For example, "use" -> "utilize" is bad, "gave" -> "provided" is bad... That's fluffing up the prose with formality. We don't need formality. We need clarity.
 You MUST reply in this format:
 
 a: <original sentence>
@@ -77,19 +60,20 @@ b: <rewritten sentence>
 ...
 
 Reply only rewritten sentences. Every sentence MUST be on one line ONLY, that is, both <original sentence> and <rewritten sentence> MUST contain no newline character.
-If a sentence is not rewritten, DO NOT REPLY IT. Do not reply anything else. If the text requires no change, return an empty string.
-Do not use American-style quotation. Use logical quotation. DO NOT USE SINGLE QUOTATION MARKS. 
+Every rewritten sentence MUST differ from its original sentence.
+Do not use American-style quotation. Use logical quotation. Do not use single quotation marks.
+Do not use en-dash or em-dashes -- use double or triple hyphens. Do not use unicode ellipsis -- use three dots.
 """.strip()
     example_user_1 = """
-We use the convention putting derivative on the rows. This convention simplifies a lot of equations, and completely avoids transposing any matrix.
+We use the convention putting derivative on the rows – for convenience… This convention simplifies a lot of equations, and completely avoids transposing any matrix.
 
 In the next section, using the "pebble construction," they studied "Gamba perceptrons." They stated "MLPs are essentially Gamba perceptrons."
     """.strip()
     example_assistant_1 = """
-a: We use the convention putting derivative on the rows.
-b: We use the convention of putting the derivatives on the rows.
+a: We use the convention putting derivative on the rows – for convenience…
+b: We use the convention of putting the derivatives on the rows -- for convenience...
 
-a: In the next section, using the "pebble construction," they studied "Gamba perceptrons."
+a: In the next section using the "pebble construction," they studied "Gamba perceptrons."
 b: In the next section, using the "pebble construction", they studied "Gamba perceptrons".
 
 a: They stated "MLPs are essentially Gamba perceptrons."
@@ -116,6 +100,10 @@ from fuzzysearch import find_near_matches
 from warnings import warn
 
 
+# Despite trying my best, GPT4 still sometimes returns a line that is not in the original text.
+# and sometimes it returns a "modified" line that is literally the same as the original line.
+# This function tries to fix the first problem.
+# The second problem is not fixed here, though it is easier to fix by filtering the proofread.txt file.
 def process_response(response, original_text="", max_l_dist=10):
     text = response.choices[0].message.content
     # Check that the input sequence satisfies a certain format
@@ -169,9 +157,9 @@ def process_response(response, original_text="", max_l_dist=10):
 def get_proofread_files(input_file, proofread_file, max_chars=4_000):
     with open(input_file, "r", encoding="utf8") as file:
         input_markdown = file.read()
-    doc = pf.convert_text(input_markdown)
+    markdown_text = my_filters.qmd_to_txt(input_markdown)
     try:
-        chunks = split_into_chunks(my_filter(doc), max_chars=max_chars)
+        chunks = split_into_chunks(markdown_text, max_chars=max_chars)
         print(f"{len(chunks)} chunks")
         for i, chunk in enumerate(chunks):
             input_string = "\n\n".join(chunk).strip()
@@ -186,6 +174,13 @@ def get_proofread_files(input_file, proofread_file, max_chars=4_000):
     except ValueError as e:
         raise e
 
-
 if __name__ == "__main__":
-    get_proofread_files("index.qmd", "index_pr.txt", max_chars=4_000)
+    if len(sys.argv) < 4:
+        print("Usage: script.py <input_file> <output_file> <max_chars>")
+        sys.exit(1)
+
+    input_file = sys.argv[1]
+    output_file = sys.argv[2]
+    max_chars = int(sys.argv[3])
+
+    get_proofread_files(input_file, output_file, max_chars=max_chars)
