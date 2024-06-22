@@ -46,7 +46,7 @@ import openai
 
 def gpt_proofread(text, model="gpt-4-1106-preview"):
     prompt = """
-You are a proofreader. The user provides a piece of R-markdown, and you will proofread it. Do not say anything else.
+You are a proofreader. The user provides a piece of R-markdown, and you will proofread it. Do not say anything else. Do not 'beautify' LaTeX syntax, such as changing $N=1$ to $N = 1$. Note that the LaTeX uses custom macros.
 Do not change the style, change a word/phrase to a "more formal" one, "fluff up the prose", make it "more serious", make it "more academic", or change the tone. Only fix grammar and awkward flow. If you change the flow or grammar, you must STILL preserve the word choice and style. Do not use a more formal word just because you have fixed the grammar or flow.
 For example, "use" -> "utilize" is bad, "gave" -> "provided" is bad... That's fluffing up the prose with formality. We don't need formality. We need clarity.
 You MUST reply in this format:
@@ -59,17 +59,23 @@ b: <rewritten sentence>
 
 ...
 
-Reply only rewritten sentences. Every sentence MUST be on one line ONLY, that is, both <original sentence> and <rewritten sentence> MUST contain no newline character.
-Every rewritten sentence MUST differ from its original sentence.
+Your reply will be proceeded by a program, so it is IMPERATIVE that you follow the format EXACTLY. Reply only rewritten sentences. Every sentence MUST be on one line ONLY, that is, both <original sentence> and <rewritten sentence> MUST contain no newline character.
+Every <rewritten sentence> MUST differ from <original sentence>. If <original sentence> is already correct, then DO NOT INCLUDE IT IN THE REPLY AT ALL.
 Do not use American-style quotation. Use logical quotation. Do not use single quotation marks.
 Do not use en-dash or em-dashes -- use double or triple hyphens. Do not use unicode ellipsis -- use three dots.
-""".strip()
-    example_user_1 = """
+If the text has NO errors, reply "NONE".
+
+Here are some examples:
+
+User: 
+```
 We use the convention putting derivative on the rows – for convenience… This convention simplifies a lot of equations, and completely avoids transposing any matrix.
 
 In the next section, using the "pebble construction," they studied "Gamba perceptrons." They stated "MLPs are essentially Gamba perceptrons."
-    """.strip()
-    example_assistant_1 = """
+```
+
+Assistant:
+```
 a: We use the convention putting derivative on the rows – for convenience…
 b: We use the convention of putting the derivatives on the rows -- for convenience...
 
@@ -78,18 +84,13 @@ b: In the next section, using the "pebble construction", they studied "Gamba per
 
 a: They stated "MLPs are essentially Gamba perceptrons."
 b: They stated "MLPs are essentially Gamba perceptrons.".
-    """
-    example_user_2 = "That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$."
-    example_assistant_2 = ""
+```
+""".strip()
     client = OpenAI()
     response = client.chat.completions.create(
         model=model,
         messages=[
             {"role": "system", "content": prompt},
-            {"role": "user", "content": example_user_1},
-            {"role": "assistant", "content": example_assistant_1},
-            {"role": "user", "content": example_user_2},
-            {"role": "assistant", "content": example_assistant_2},
             {"role": "user", "content": text},
         ],
     )
@@ -106,7 +107,10 @@ from warnings import warn
 # The second problem is not fixed here, though it is easier to fix by filtering the proofread.txt file.
 def process_response(response, original_text="", max_l_dist=10):
     text = response.choices[0].message.content
+    if text == "NONE":
+        return ""
     # Check that the input sequence satisfies a certain format
+    print(text)
     prefix_list = [line.strip()[:2] for line in text.split("\n") if line.strip() != ""]
     prefix_string = "".join(prefix_list)
     if not re.fullmatch(r"((\?|a):b:(c:)?)*", prefix_string):

@@ -20,7 +20,7 @@
     "reason": "scrunched up punctuation"
   },
   {
-    "a": " ([\"']) ",
+    "a": "\\s([\"'])\\s",
     "b": "$1",
     "reason": "Quote marks should be adjacent to something"
   },

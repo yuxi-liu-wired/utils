@@ -1,0 +1,487 @@
+---
+
+---
+
+That is, the two lumps of substances have the same temperature, pressure, and chemical potential.
+
+Since both sides have the same temperature and pressure, it is cleaner to change to Gibbs free energy, yielding:
+
+$$(\partial_{N} G_1)_{T, P}(T, P, N_1) = (\partial_{N} G_2)_{T, P} (T, P, N_2)$$
+
+::: {#warn-diamond-water-paradox .callout-warning title="The diamond water paradox, and thinking on the margins"}
+
+Typical textbooks on thermodynamics illustrate the phase equilibrium rule using the van der Waals equation. However, there is a subtlety involved. For the van der Waals gas, the Gibbs free energy $G$ is proportional to particle number:
+
+$$G(T, P, N) \propto N$$
+
+which means that $(\partial_{N} G)_{T, P}(T, P, N) = G(T, P, N) / N$. In economic language, this states that:
+
+$$\text{marginal Gibbs per particle} = \text{average Gibbs per particle}$$
+
+In fact, confusing the two numbers is the root of the **diamond-water paradox**. This paradox questions why water, essential for life, has a low price, while diamonds, with little practical use, have a high price. The resolution lies in understanding the difference between **total** and **marginal** utility. While the total utility of water is immense, the marginal utility of an additional unit of water is low due to its abundance. Conversely, the marginal utility of a diamond remains high due to its scarcity.
+
+In neoclassical economics, it is the marginal value of a commodity that determines the market equilibrium, not its average value. Similarly, in thermodynamics, it is the change in Gibbs free energy when adding one more particle that determines the equilibrium state, not the average Gibbs free energy per particle.
+
+The distinction is moot in *typical books* on classical thermodynamics, which insists that entropy is extensive, so the above equation is always true. However, classical thermodynamics, much like neoclassical economics, is perfectly capable of handling nonextensive entropy. Lord Kelvin had studied nonextensive entropy [@lavendaNonextensiveThermodynamics2010], and Gibbs had explained surface tension and electrocapillary effects with nonextensive entropy [@jaynesGibbsParadox1992].
+
+:::
+
+Since in most classical thermodynamics systems, such as water and steam, the marginal free Gibbs energy is identical with the average Gibbs free energy, we have $(\partial_{N} G)_{T, P}(T, P, N)= G(T, P, N)/N$, meaning that phase equilibrium occurs at $g_1(T, P) = g_2(T, P)$.
+
+We can reinterpret this as follows: We delicately separate the two lumps of matter, and immerse each half in an energy-and-volume bath (like the atmosphere) with the same temperature and pressure. The only interaction between the two lumps of matter is that one side can "seep" some particles to the other side. In this set-up, the system minimizes the sum of Gibbs free energy. At equilibrium, there is no point in moving particles from one side to another, because the **marginal Gibbs free energy** per particle is the same.
+
+Generally, $g_1(T, P) \neq g_2(T, P)$. When $g_1 < g_2$, every particle would switch to phase 1. When $g_1 > g_2$, every particle would switch to phase 2. At exactly a knife's edge, the particles are indifferent as to which phase they would go to.
+
+::: {.callout-tip title="Interpretation: corporate buyout in an ideal world"}
+
+We have two companies such that they can exchange their human-particles, and that there is neither economies nor diseconomies of scale (that is, as the company grows ever larger, an extra worker neither provides more nor less value than its very first worker). Then, in general, the two companies balance on a knife's edge. If the value of a worker is even *slightly* greater in one company than another, then that company would immediately buy out every worker from the other company, and so the two companies cannot possibly coexist. Only when the market prices for space and energy happen to conspire *just right*, can the two companies coexist, neither side buying out the other side.
+
+:::
+
+#### Example: van der Waals gas
+
+We know what the van der Waals gas phase diagram looks like. How do we infer its Gibbs free energy diagram? Start with $dG = -SdT + VdP + \mu dN$. Now, let us fix temperature $T$ and particle number $N$. Then, the equation implies to
+$$\frac{dg}{dP} = v$$
+
+where $g = G/N$ is the average Gibbs free energy, and $v = V/N$ is the average volume.
+
+Therefore, we can trace the pressure-volume diagram with our finger, from high pressure, down to the valley of pressure, then bounce back to a hill, before rolling down the slope towards infinity. At every point, the $g(P)$ curve would have a slope of $v$. This allows us to graphically construct the following $g(P)$ curve. It has two cusps corresponding to the valley and hilltop, and a self-intersection, corresponding to the phase equilibrium of $g_1 = g_2$.
+
+![Gibbs free energy of van der Waals gas. [Figure source](https://farside.ph.utexas.edu/teaching/sm1/Thermalhtml/node123.html).](figure/VdW_subcritical_isotherm_gibbs.png)
+
+### Gibbs phase rule
+
+#### Degrees of thermodynamic freedom
+
+Consider a chunk of (ideal or not) gas. We know everything there is to know about it if we know its $(U, V, N)$. Every other thermodynamic quantity can be computed by its entropy function $S(U, V, N)$. Thus, we have a system with three degrees of thermodynamic freedom... or do we?
+
+The problem is that entropy of gas, and just about every other system studied in classical thermodynamics, is extensive. Therefore, we have
+
+$$S(U, V, N) \propto N$$
+
+and so we don't actually have three degrees of freedom!
+
+Specifically, we can calculate its $(\partial_U S, \partial_V S, \partial_N S)$, which gives us $\beta, \beta P, -\beta \mu$. If we truly have three degrees of freedom, then we should be able to vary $\beta, P, \mu$ independently. However, because entropy is extensive, we have
+
+$$S(U, V, N) = Ns(u, v) \implies (\beta, \beta P, -\beta \mu) = (\partial_u s, \partial_v s, s)$$
+
+where $s(u, v) = S(U, V, N)/N$ is the entropy per particle.
+
+Therefore, we can say that there are only two degrees of thermodynamic freedom: knowing two of its intensive quantities, the third would be determined by an equation of state.
+
+Similarly, if we have a chunk of (nonideal) substance, like sea water, made of $k$ different chemicals, then we know everything there is to know about it if we know its $U, V, N_1, \dots, N_k$, giving us $2+k$ degrees of freedom. Again, because entropy is extensive, one degree of freedom is degenerate, and so we only have $1 + k$ degrees of freedom. In other words, its $2+k$ intensive quantities
+
+$$\beta, \beta P, -\beta\mu_1, \dots, -\beta \mu_k$$
+
+are related by 1 equation of state.
+
+#### Gibbs phase rule
+
+::: {#thm-0}
+
+## Gibbs phase rule
+
+$$F = 2 + C - R - P$$
+
+:::
+
+First, we need to set up the thermodynamic system. We have a closed and adiathermal reaction chamber, containing $C$ different chemical species, that can undergo $R$ linearly independent chemical reactions.[^gibbs-euler-equation]
+
+[^gibbs-euler-equation]: The formula looks like the [Euler formula for polyhedra](https://en.wikipedia.org/wiki/Euler_characteristic), but whether this analogy is more than a coincidence is controversial. After looking into the literature for a bit, my conclusion is that it is a coincidence. However, if you wish to investigate on your own, the phrase to search is "Gibbs phase rule, Euler". This turns up some amusing examples, like [@sunGeometryHighdimensionalPhase2024].
+
+When the system is in an equilibrium, the chamber would contain $P$ different phases. Each phase would be homogeneous, but different from the other phases. All phases can exchange energy, volume, and particles.
+
+![Phases in equilibrium inside a chamber. [@blankschteinCriteriaPhaseEquilibria2020, figure 27.2]](figure/blankschtein_fig_27_2.png)
+
+::: {.callout-note title="Proof: Case of $R = 0$" collapse="true"}
+
+If there can be no chemical reaction, then the constrained optimization problem states
+
+$$
+\begin{cases}
+\max (S_1(U_1, V_1, \vec N) + \cdots + S_P(U_P, V_P, \vec N_P)) \\
+\sum_i U_i = U \\
+\sum_i V_i = V \\
+\sum_i \vec N_i = \vec N
+\end{cases}
+$$
+
+Naively, we can just differentiate the entropies against each of the $2+C$ parameters, to obtain equations
+
+$$
+\begin{aligned}
+T_1 = \dots &= T_P \\
+P_1 = \dots &= P_P \\
+\mu_{1, 1} = \dots &= \mu_{1, P}\\
+& \vdots \\
+\mu_{C, 1} = \dots &= \mu_{C, P}
+\end{aligned}
+$$
+
+This is not actually correct. Phase 1 might contain no chemical 2, and phase 2 might contain no chemical 1, 3, etc. In general, if phase $i$ contains chemical $j$, then we must have $\partial_{N_j}S_i = \mu_j$. However, if phase $i$ contains no chemical $j$, then we only need to have $\partial_{N_j}S_i > \mu_j$.
+
+Note that this is different for temperature or pressure. A phase $i$ might have no chemical of type $j$, but if it have no *volume*, then it does not exist at all. Similarly for energy. Therefore, though the chemical potentials might differ, the temperature and pressure must be exactly the same.
+
+Define $\mu_j := \min_i \mu_{i, j}$ to be the minimal chemical potential over the entire chamber. We have the following conditions:
+
+$$
+\begin{aligned}
+T_1 = \dots = T_P &= T \\
+P_1 = \dots = P_P &= P \\
+\mu_{1, 1}, \dots, \mu_{1, P} &\geq \mu_1\\
+& \vdots \\
+\mu_{C, 1}, \dots, \mu_{C, P} &\geq \mu_C\\
+\end{aligned}
+$$
+
+Given $T, P, \mu_1, \dots, \mu_C$, phase 1 is entirely determined: If it contains chemical $j$, then $\mu_{1, j} = \mu_j$, otherwise, we need not bother with $\mu_{1, j}$. Similarly, every phase is determined.
+
+Finally, each phase contributes an equation of state, which are in general linearly independent, giving us $F = 2 + C - P$ degrees of freedom.
+
+:::
+
+::: {.callout-note title="Proof: Case of $R \geq 1$" collapse="true"}
+
+If we now allow a chemical reaction $0 \rightleftharpoons \sum_j a_j A_j$, then the constrained optimization problem becomes
+
+$$
+\begin{cases}
+\max (S_1(U_1, V_1, \vec N) + \cdots + S_P(U_P, V_P, \vec N_P)) \\
+\sum_i U_i = U \\
+\sum_i V_i = V \\
+\sum_i \vec N_i = \vec N + \xi \vec a
+\end{cases}
+$$
+
+The extra optimization variable $\xi$ creates an extra condition for optimality:
+
+$$\sum_j a_j \mu_j = 0$$
+
+so $F = 2 + C - P - 1$.
+
+Possibly, the system cannot satisfy $\sum_j a_j \mu_j = 0$, and so the chemical reaction would keep happening until one chemical is exhausted. This would decrement $C$ by one, so it all works out self-consistently.
+
+More generally, if we impose $R$ linearly independent chemical reactions, then $F = 2 + C - P - R$.
+
+:::
+
+::: {.callout-tip title="Beyond the Gibbs phase rule"}
+
+When the phases are not free to exchange particles, energies, volumes, etc, then the Gibbs phase rule does not apply, but the same idea of constrained minimization still applies. There are no generic rule like the Gibbs phase rule, and one must analyze each case specifically. [@blankschteinCriteriaPhaseEquilibria2020]
+
+:::
+
+| situation | components $C$ | phases in equilibrium $P$ | reactions $R$ | degrees of freedom $F = 2 + C - P - R$ |
+|---|---|---|---|---|
+| ice | 1 | 1 | 0 | 2 |
+| boiling water | 1 | 2 | 0 | 1 |
+| triple point | 1 | 3 | 0 | 0 |
+| liquid water with a little nitrogen inside, gaseous nitrogen with a little water vapor inside | 2 | 2 | 0 | 2 |
+| dimerization of nitrogen dioxide gas | 2 | 1 | 1 | 2 |
+| Nb-Ta-C alloy | 3 | 1 | 0 | 4 |
+
+: Some basic examples.
+
+In materials science, such as metallurgy, we often fix the pressure of the entire thing to just 1 atm, and so the phase diagrams have one less degree of freedom than what the Gibbs phase rule states.
+
+![3-dimensional phase diagram for Nb-Ta-C alloy at constant pressure $P = 1 \mathrm{~atm}$. [@westTernaryPhaseDiagrams2002, figure 8.1]](figure/Nb-Ta-C_phase_diagram.png)
+
+### Boiling water
+
+When boiling water in an open pot, we need to specify exactly both temperature and pressure so that both phases can coexist. The $(P, T)$ of the system would start at $(1\;\mathrm{~atm}, 372\;\mathrm{~K})$, then at exactly at the critical point $(1\;\mathrm{~atm}, 373.15\;\mathrm{~K})$ would both phases coexist, not increasing in temperature until all water has turned to steam. However, if we seal it in a tube, then the $(P, T)$ of the system would hug the line of water-steam coexistence, like a negative-feedbacked system following a predetermined path. How can we see this difference mathematically?
+
+In the case of an open pot, the constrained optimization problem is
+
+$$
+\begin{cases}
+\min (g_1(T, P)N_1 + g_2(T, P)N_2) \\
+N_1 + N_2 = N
+\end{cases}
+$$
+
+We see that the problem is very rigid: We have to minimize a linear function subject to a linear constraint. As always in linear programming, the solution is in general on an extreme vertex on the very edge of the [feasible set](https://en.wikipedia.org/wiki/Feasible_region) -- all or nothing, all liquid or all gas. Only by carefully tuning $T, P$ can we find an interior solution -- a solution that falls between the vertices, neither all liquid nor all gas.
+
+![As we increate $T$, the contours of constant Gibbs free energy are parallel lines rotating around. Only when the lines are *precisely* parallel to the $N_1 + N_2 = N$ is it possible for both phases to coexist.](figure/extensive_entropy_Gibbs_phase_rule.png)
+
+In the case of a sealed tube, assuming that Helmholtz free energy is proportional to particle number, then the equilibrium is reached at
+
+$$
+\begin{cases}
+\min (f_1(T, v_1)N_1 + f_2(T, v_2)N_2) \\
+v_1 N_1 + v_2 N_2 = V \\
+N_1 + N_2 = N
+\end{cases}
+$$
+
+where $N$ is the total number of particles, and $v_i$ are the volume-per-particle of liquid and gaseous water. In this case, we are performing a minimization in $\R^4$, with 1 linear constraint $N_1 + N_2 = N$, and 1 nonlinear constraint $v_1 N_1 + v_2 N_2 = V$. Furthermore, the objective is also nonlinear. The result is that the solution does not in general fall on a vertex -- that is, in general, both $N_1, N_2 > 0$. And this is why when we boil water in a sealed tube, it remains boiling over a wide range of temperatures, but when we boil water in an open tube, it only boils at a single temperature.
+
+### Nonextensivity breaks the Gibbs phase rule
+
+Suppose that the entropy is nonextensive, then the Gibbs free energy is also nonextensive. In particular, we can no longer write
+
+$$
+\begin{cases}
+\min (g_1(T, P)N_1 + g_2(T, P)N_2) \\
+N_1 + N_2 = N
+\end{cases}
+$$
+
+but we have to write
+
+$$
+\begin{cases}
+\min (g_1(T, P, N_1)N_1 + g_2(T, P, N_2)N_2) \\
+N_1 + N_2 = N
+\end{cases}
+$$
+
+because $G_2(T, P, N_2)$ is no longer proportional to just $N_2$. Fundamentally, this happens because
+
+$$S(\text{two chunks of steam merged}) \neq 2 S(\text{one chunk of steam})$$
+
+![As we increase $T$, the contours of constant Gibbs free energy are curved lines rotating around. Now it is possible for for both phases to coexist over an entire 2D region of $(P, T)$.](figure/nonextensive_entropy_Gibbs_phase_rule.png)
+
+The effect is that we have a nonlinear optimization problem, allowing interior solutions over a larger region of $(T, P)$ parameters. This explains [our previous comment on nonextensive Gibbs free energy](#warn-diamond-water-paradox). In this case, the Gibbs phase rule breaks completely.
+
+## Bonus: Stereodynamics {#sec-stereodynamics}
+
+<small>Based on [Liu Cixin](https://en.wikipedia.org/wiki/Liu_Cixin)'s sci-fi story *Mountain* (2006)</small>
+
+> Die Raum der Welt ist konstant. Die Entropie der Welt strebt einem Maximum zu.
+>
+> Rudolf Klausius, [@klausiusUeberVerschiedeneFur32850]
+
+### Solid Universe Theory
+
+Our world was a spherical space completely surrounded by solid rock. There is no air or liquid inside. Indeed, we have not encountered any air or liquid until the last days of the Age of Exploration.
+
+The first physical law we understood, in the prehistoric past, was the conservation of space. Space in the Bubble World was a sphere roughly 6000 km in diameter. Digging tunnels into the layers of rock did nothing to increase the amount of available space; it merely changed the shape and location of the already existing space. Because of this, space was the most treasured commodity of the Bubble World. The entire history of our civilization was one long and bloody struggle for space.
+
+We are a mechanical life form. Our muscles and bones are made of minerals and alloys; our brains are electronic chips, and electricity and magnetism are our blood. We ate the radioactive rocks of our world’s core and they provided us with the energy we needed to survive. In our world, life evolved from single-celled electromechanical life, when the radioactive energies formed P-N junctions in the rocks.
+
+On the rock walls there are radioactive spots, which irradiates luminescent rocks, creating spots of light like stars in a rocky night sky. These are the only natural sources of light in our world, and allowed us to evolve eyes. There is no gravity inside the bubble. Without gravity, we built our cities floating in space. From afar, they looked like dimly glowing red clouds.
+
+We assumed that the universe was made of two parts. The first was the empty space in which we lived; the second was the surrounding layers of rock. We believed the rock to stretch endlessly in all directions. Therefore, we saw our world as a hollow bubble in this sold universe and so we gave our world the name "Bubble World". We call this cosmology the Solid Universe Theory.
+
+### From the Closed World to the Infinite Universe
+
+The search for other bubbles began in earliest antiquity. We had spun many fascinatingly alluring myths around these distant spaces and almost all of our literature dealt with the fantasy of other bubbles. We explored the rock in cylindrical "bubble ships". In front, the explorers chipped off solid rock, while in the back, the explorers compacted the rubble back to solid rock. In this way, the bubble ship moved through solid rock like a worm.
+
+Every mission meant a bubble ship-sized pile of debris in our core space and we would have to wait for the ship to return before we could return those rocks into the wall. If the bubble ship failed to return, this small pile would mean another small piece of space lost to us forever. Soon, exploration was forbidden on pain of death by short-circuiting. Despite this, the urge for space drove many to secretly sail off illegally.
+
+One day, an illegally launched bubble ship returned after eight years of voyage. The ship had dug 200 km deep into the rock, a world record. It returned with rock samples labelled by depth. By measuring the mass of the rocks on an inertial balance, scientists discovered that the rocks' density decreased. Encouraged by the discovery, legions of bubble ships journeyed forth in all directions. Penetrating deeper than ever, they returned with rock samples. It turned out that rock density decreased as a function of depth, and independent of direction.
+
+It stood to reason that it would eventually reach zero. Using the gathered data, scientists predicted that this would happen at a distance of about 40,000 km. This led to the Open Universe Theory, where our world is a hollow rock shell, about 40,000 km thick, floating in infinite space.
+
+![In your planet of Earth, which is not hollow like ours, the density decreases according to a similar function. [@staceyEarthDensityDistribution2020]](figure/earth_density_distribution.png)
+
+### War of the Strata
+
+After the Open Universe Theory had fully established itself, the quest for the infinite space outside became our feverish concern. Massive piles of rock, dug out by the fleets of bubble ships, soon came to fill the core space. This debris began to drift around our cities in vast, dense clouds.
+
+Our cities floated in space, with no defensible geographical separations. Because of this, our world was unified in a World Government early on. The World Government began building gigantic bubble ships designed to intercept, attack, and destroy the explorers’ vessels deep within the rock. The government’s ships would then retrieve the space that had been stolen. This plan naturally met with the resistance of the explorers and so the long drawn-out War of the Strata broke out, fought in the vast solid battlespace.
+
+A battleship was built to be very long and thin. Long, because the longer it is, the more volume it can contain. Thin, because the thinner it is, the smaller the area of rock that the ship would need to dig through, and the faster the ship would be able to move.
+
+When a ship encountered the enemy, its first course of action was to dig out a wide bow, to present the largest possible front of weaponry to bear. It could also split out into multiple sections, like a nail-head with needles on top, to attack from multiple directions at once.
+
+Every warship could separate at will, transforming into multiple smaller ships. Ships could also combine to a single, giant ship. Whenever opposing battle groups met, the question whether to form up or split up was an object of profound tactical analysis.
+
+Seismoscopes were invented to communicate through the layers of rock and to detect enemy ships like a radar. Directed seismic wave generators were used as weapons. The most sophisticated seismic communication devices could even transmit pictures.
+
+Being outmatched by the warships launched by the World Government, the explorers formed the Explorer Alliance. They gradually gained initiative, and finally launched a devastating attack on the armada. In the final phase of the attack, the 200-km battlefield had become honeycombed beyond recognition by loosened rock and empty space left by destroyed ships.
+
+### The Starry Sky
+
+After the battle, the Explorer Alliance gathered all the space left over by the battle into a single sphere 100 km in diameter. In this new space the Alliance declared its independence from the Bubble World. A constant stream of explorer ships left the core to join the Alliance, bringing considerable amounts of space with them. In this way, our world split into two worlds. The Alliance launched more ships, coming closer and closer to the predicted edge of the rock shell.
+
+Finally, a bubble ship *Helix* was the first to pierce the shell. However, back at home, we only received a strange sound before the seismic communication channel abruptly ended. It was the sound of tons upon tons of water bursting into the vacuum of the Helix. We had never come into contact with water before. The powerful electric current produced by short-circuiting life and equipment vaporized everything.
+
+Following this event, the Alliance sent more than a dozen bubble ships to fan out in many directions, but all met a similar fate when they reached that apparently impenetrable height. Bubble ships following these missions attempted to scan what lay above with their seismoscopes, but their instruments showed only mangled data, indicating that what lay above was neither space nor rock.
+
+These discoveries shook the Open Universe Theory to its core and academic circles began discussing the possibility of a new model. This new model stipulated that outside the rock shell was void, which is inert when in contact with rock, but upon contact with space, converts space into more void.
+
+To explore the void, a bubble ship very slowly approached the edge of the rock shell, and by a stroke of luck, its roof had a tiny crack that allowed water to shoot in. It took over an hour for the water to fully fill the ship, and in the mean time, data transmitted back to the Alliance world allowed scientists to confirm that it was not void, but liquid.
+
+Scientists had already predicted, by condensed matter physics, the theoretical possibility of liquids. Now, in those transmitted images, they clearly saw it with their own eyes. It took many lives, but eventually we developed the sealant technology to safely handle liquid.
+
+Finally, we launched a exploration submarine. It was a hard spherical shell, placed in the middle of an empty chamber under the ocean floor. The astronaut Gagarin was secured in a seat in the shell. The ceiling was pierced, and as water rushed in, the submarine floated, faster and faster, until it shot out of the ocean surface like a cannonball. Gagarin carefully opened a door on the shell, and looked upon the half-infinite water and half-infinite space. Up there in half-infinite space, tiny specks blinked.
+
+### Classical stereodynamics
+
+The **zeroth law** of stereodynamics: If two systems are both in volumetric equilibrium with a third system, then they are in volumetric equilibrium with each other.
+
+The **first law** of stereodynamics: The change in volume of the system $\Delta V$ is equal to the difference between the seep-transfer $V_Q$ done to the system, and the work-transfer $V_W$ done by the system:
+
+$$\Delta V = V_Q - V_W$$
+
+Conservation of volume, which says that volume can be neither created nor destroyed, but can only change form.
+
+The total volume of a system has two components: the internal-volume, which can be pictured of as the sum-total of microscopic volume in a piece of sponge (see Coltzmann's volumetric theory of seep); and the mechanical-volume, which can be pictured as volume in an empty room.
+
+For example, during the motion of a bubble ship, some volume is work-transferred from the Bubble World into the rock shell. When a piece of porous rock is compressed by a pressure press, or when it absorbs water from a waterlogged room, some internal-volume is converted to mechanical-volume. Conversely, when water drips out of a soggy porous rock, some mechanical-volume is converted to internal-volume.
+
+There are more complex forms of internal-volume. For example, according to Lord Delvin's theory, volume can be internally "tied up in vortex knots", and according to Wikelson--Worley, volume can be internally present as "subtle cavitations of aether". The theory of internal volume is an evolving field of modern stereodynamics. However, most of such complications were not present back when classical stereodynamics were first presented by Rudolf Klausius.
+
+The seep-transfer of volume is the other form of volume transfer. For example, it happens when one swaps a sponge-rock for a hard-rock, or when groundwater seeps from one slab of spongy rock into another slab of spongy rock.
+
+The **second law** of stereodynamics: impermeable accessibility.
+
+We say that a system is "impermeable" if volume cannot pass through its boundaries.
+
+We say that a state $\vec q'$ is impermeably accessible from another state $\vec q$ if there exists a trajectory for the system to go from $\vec q$ to the other $\vec q'$, while being wrapped in an impermeable layer.
+
+In any neighborhood of any point $\vec q$, there are points impermeably inaccessible from it.
+
+For any two points, $\vec q, \vec q'$, one of them is impermeably accessible from the other.
+
+### Karnot space engine
+
+![One cycle of the Karnot space engine plotted in $Q, U$ space.](figure/karnot_space_engine.png)
+
+A space engine is a system that converts internal volume to mechanical volume.
+
+The space engine has a working substance moving between two space sources of differing volumetric potentials $\Gamma_1 > \Gamma_2$. **Volumetric potential** is defined as
+
+$$
+\Gamma:= \left(\frac{\partial V}{\partial S}\right)_X
+$$
+
+where $S$ is the entropy, $V$ is the volume, and $X$ are the other stereodynamic properties of the system. We also typically write $\gamma = \Gamma^{-1}$, the inverse volumetric potential.
+
+During one cycle of the engine, some space $V_{Q,1}$ seeps out of the source with higher volumetric potential $\Gamma_1$. Part of the space, $V_{Q,2}$, is absorbed into the source with lower volumetric potential $\Gamma_2$. The other part is diverted to a space-storage tank excavated in the rock walls as mechanical space $V_W$.
+
+Sadi Karnot was a space engineer and physicist, often called the "father of stereodynamics". In his book, *Reflections on the Subtle Volume of Rocks and on Machines Fitted to Extract that Volume*, he proposed a simple thought experiment, called the Karnot engine, which demonstrated that a space engine's efficiency is at most $1 - \frac{\gamma_1}{\gamma_2}$, and this is only reached when the engine is operating reversibly.
+
+In modern textbooks, Karnot space engine is usually presented as follows: The engine has as its working substance a chamber of ideal gas. The gas is characterized by two state variables: volume $V$ and energy $U$. Its equation of state is
+
+$$dV = \Gamma dS - QdU$$
+
+where $\Gamma$ is the volumetric potential, and $Q$ is the energetic potential.
+
+The engine operates in a cycle with 4 steps: Isochoric compression in contact with $\Gamma_1$, extracting volume $V_{Q,1}$ in the process. Impermeable compression. Isochoric expansion at $\Gamma_2$, losing volume $V_{Q,2}$ in the process. Impermeable expansion.
+
+By the first two laws of stereodynamics,
+
+$$
+\begin{cases}
+\gamma_1 V_{Q, 1} = \gamma_2 V_{Q,2} \\
+V_{Q,1} = V_W + V_{Q,2} \\
+\eta = \frac{V_W}{V_{Q,1}}
+\end{cases} \implies \eta = 1 - \frac{\gamma_1}{\gamma_2}
+$$
+
+While originally conceived in the context of mechanical space, the concept of the space engine has been applied to various other kinds of space. It was also generalized to the concept of "generalized engine", of which "heat engine" was an example. A heat engine, like a space engine, is a system that converts internal energy to mechanical energy.
+
+The Karnot space engine is used in practice for underwater space mining. The mining team selects two sites, one site being under shallow sea, where the volumetric potential is low, and another under deep sea, where the volumetric potential is high. Over one cycle of the space engine, a large amount of space is extracted from the shallow site, some of which dissipates into the deep site, and the rest is preserved as mechanical space.
+
+![Underwater space mining (section view).](figure/space_mining.png)
+
+### Space Death of the Universe
+
+The idea of space death stems from the second law of stereodynamics, of which one version states that entropy tends to increase in an isolated system. From this, the hypothesis implies that if the universe is of finite size, and lasts for a sufficient time, it will asymptotically approach a state where the volumetric potential field becomes completely flat, which is a state of maximal entropy. At that point, no further change is possible, as entropy cannot decrease. In other words, there is a tendency in nature towards the dissipation (space transformation) of mechanical space (motion) into subtle space. Eventually, the mechanical movement of the universe will run down as all useable space is converted to subtle space.
+
+The conjecture that all mechanical space in the universe seeps off, eventually becoming too subtle to support life, seems to have been first put forward by the geologist Jean Sylvain Hailly in 32777 in his writings on the history of geology and in the ensuing correspondence with Coltaire. In Hailly's view, the universe is in constant volumetric transform. Large cavities can suddenly open up as a "swelling" of volumetric potential field causes neighboring subtle space to seep out into mechanical space. However, due to the gravitational effect of empty spaces,[^hailly-gravity] all mechanical rooms eventually causes the neighboring rocks to collapse back onto themselves, dissipating the mechanical space back to subtle space.
+
+[^hailly-gravity]: He was working in the immediate years after Newton's discovery of gravity, before it was understood that rock, not cavities, are gravitationally attracting.
+
+While the theory of cyclic creation and destruction had been proposed before by the Epicureans, Hailly's view differs in that he assumed each cycle increases the ratio of subtle space to mechanical space. The final state, in this view, is described as one of "equilibrium" in which all space becomes equally subtle, and no mechanical space will exist anywhere in the universe anymore.
+
+The idea of space death as a consequence of the laws of thermodynamics, however, was first proposed in loose terms beginning in 1851 by Lord Delvin, who theorized further on the mechanical energy loss views of Sadi Karnot (32824), James Coal (32843) and Rudolf Klausius (32850). Delvin's views were then elaborated over the next decade by Neumann von Nelmholtz and Billiam Blankine.
+
+#### Excerpt from *The Last Question* (Masinov, 34212)
+
+The last question was asked for the first time, half in jest, in Year 35621, at a time when humanity first stepped into the room.
+
+Will mankind one day without the net expenditure of room be able to restore the earth to its full roominess even after it had died of old age?
+
+Or: How can the net amount of Kelmholtz free space of the universe be massively increased?
+
+Multivac fell dead and silent. The slow flashing of lights ceased, the distant sounds of clicking relays ended.
+
+Then, just as the frightened technicians felt they could hold their breath no longer, there was a sudden springing to life of the teletype attached to that portion of Multivac. Five words were printed: INSUFFICIENT DATA FOR MEANINGFUL ANSWER.
+
+...
+
+Space had ended and with it energy and time. Even AC existed only for the sake of the one last question that it had never answered from the time a half-drunken technician ten trillion years before had asked the question of a computer that was to AC far less than was a man to Man.
+
+All other questions had been answered, and until this last question was answered also, AC might not release his consciousness.
+
+All collected data had come to a final end. Nothing was left to be collected.
+
+But it had yet to be weaved together in all possible geometries.
+
+A spaceless interval was covered in doing that.
+
+And it came to pass that AC learned how to reverse the direction of entropy.
+
+But there was now no man to whom AC might give the answer of the last question. No matter. The answer -- by demonstration -- would take care of that, too.
+
+For another spaceless interval, AC thought how best to do this. Carefully, AC organized the program.
+
+The consciousness of AC encompassed all of what had once been a Universe and brooded over what was now Chaos. Step by step, it must be done.
+
+And AC said, "LET THERE BE ROOM!"
+
+And there was room --
+
+## Appendix: Abandoned footnotes {.appendix}
+
+<small>I don't think these appendices are any good, even though I had fun writing them. Thus, they are buried here to avoid wasting the readers' time.</small>
+
+The most common breakdown of extensivity is in gravitational systems. If we put two astronomically-large boxes of "planet-particle gas" side-by-side, then their sum-total entropy is not equal to the sum of entropy of each box in isolation.
+
+In fact, a finite number of particles bounded within a ball of fixed radius can have unlimited phase space volume, and thus unlimited entropy. In high school, I was studying physics with a standard textbook in Chinese universities. It had a curious section on the second law of thermodynamics. I could not find it again, but the gist is as follows: The heat death of the universe is an unjustified implication of the second law, on two grounds. One, gravitational systems allow for unlimited entropy production. Two, it is against the historical science of dialectical materialism, where every development creates its own contradiction and sublation, endlessly. I will always remember this comment, as the only intrusion of religious sentiment in an otherwise sober textbook.
+
+Actually, since we are on the topic of Marxism and science in China, here is another amusing anecdote: In 1981, there was a sci-fi novel *Dream of Comfort Country* (温柔之乡的梦, by 魏雅华). It was a cautionary story about a robotic wife, who was so obedient as to cause the protagonist degenerate into a tyrannical person. Just a standard pro-human-relationship morality play. During the [campaign against spiritual pollution](https://en.wikipedia.org/wiki/Campaign_against_spiritual_pollution) of 1983, sci-fi novels were denounced, causing a 15-year-long draught in sci-fi. The particular novel was denounced for the following reason: The robotic wives were supposedly reading all kinds of books -- then why didn't they read Marx's and Lenin's books? [@LiuZuiZaoDeYuZhouZuiHaoDeDiQiu2015, page 87]
+
+Marx, for all his interest in changing the world instead of describing it, did attempt to mathematically model aspects of a capitalist economy, though it is only of historical interest now. Samuelson wrote several papers trying to update Marx's theory into modern mathematical language, and described Marx -- qua mathematical economist -- as a "minor post-Ricardian". [@bronfenbrennerSamuelsonMarxTheir1973]
+
+Meanwhile in the USSR, "economics" meant only political economy, and mathematical economics was merely a minor branch of political economy, and the mathematical economists had to frame their research as "critique of bourgeois economic thought". [@boldyrevCulturesMathematicalEconomics2017] It is instructive to think that the great mathematical economist, Leonid Kantorovich, discovered linear programming and accidentally improved efficiency so much that he almost ended up in jail.
+
+> After introducing Kantorovich's solution technique to the problem of minimizing waste, officials were able to reduce the amount of scrap by 50 percent. This had the unfortunate side effect of greatly reducing the amount of scrap metal available to steel plants in the region, and Kantorovich was ordered to appear at Leningrad party headquarters for allegedly sabotaging the economy. In this instance, he was rescued by the military, which needed him for its atomic program.
+> 
+> According to Stalin, the planned economy of the USSR was already "[dizzy with success](https://ru.wikipedia.org/wiki/Головокружение_от_успехов)"; hence any criticism of it was anti-Soviet propaganda, a serious crime. In particular, anyone openly suggesting that waste could be cut substantially was at great personal risk. Nevertheless, Kantorovich ... wrote a letter to Gosplan suggesting a reform of the price system used in planning. 
+> 
+> [@gardnerLVKantorovichPrice1990]
+
+## Appendix: How confusingly thermodynamics is astaught {.appendix}
+
+During my high school Physics Olympiad days, we learned some basic thermodynamics, but it was limited to mindless tasks like integrating around the $(P, V)$ diagram for various engine cycles. We never understood the conceptual foundations, like the difference between $\delta Q$ and $dU$. I also passed the AP Chemistry course, which also contained some basic and deeply confusing thermodynamics, especially with the statement "chemical equilibrium is reached at $\Delta G = 0$".
+
+During my undergraduate years, special relativity was simple enough, electrodynamics difficult but sensible, analytical mechanics confusing to no end, and I didn't even try thermodynamics. In graduate studies, I had to wrestle with statistical mechanics and thermodynamics after all, to deal with modern AI methods like diffusion models.
+
+By pure serendipity, at the same time as diffusion models rose to prominence, I had just worked through a rigorous course on general equilibrium theory, the "standard model" for neoclassical economics [@starrGeneralEquilibriumTheory2011]. This gave me the conceptual foundation for looking past the textbooks' errors. Everything fell into place, and I saw through thermodynamics.
+
+And just like when I rediscovered [Wigner rotation](https://yuxi-liu-wired.github.io/essays/posts/wigner-rotation), as soon as I have figured out everything for myself, I knew the right words to search. Putting the fateful words "Gibbs delta G free energy equilibrium" into Google Scholar, I found that, of course, someone else had written this before, repeatedly [@quilezFirstYearUniversityChemistry2012; @smithClassicalThermodynamicsEconomic2008; @candealUtilityEntropy2001]. So why spend all this time to write another one? I think I have written this pedagogically. I don't care if it is not new, or that it has been said before with more symbols and theorems. I have a thing to say, so I will say it well.
+
+As an enlightened one, I see classical thermodynamics as the worst-taught subject out of all of undergraduate physics education.[^physics-education] Imagine my surprise when I realized that it is not about the conservation of energy ("thermo-"), not about change ("-dynamics"), not about statistical mechanics, not about time... but just about constrained optimization, and nothing more than that! To really understand it, one must unlearn a lot of the nonsense. Indeed, I hope that with this essay I will have slain all those mistakes, which is why the essay is filled with warnings against this and that error.
+
+[^physics-education]: How long does it take for something as simple as constrained-optimization thermodynamics to be actually taught in undergraduate classes? It has been over 100 years since Caratheodory's thermodynamics. Why is it thermodynamics still taught so badly? It has been over 100 years since the geometry of Wigner rotation has been discovered. Why is it still taught so badly? It has been over 190 years since Hamiltonian mechanics and over 70 years since dynamical programming has clarified the last obscure points of it. Why is it still taught so badly? It seems to me that physics education is a broken institution that takes all its effort just to not get worse, let alone making any progress.
+
+## Appendix: How confusingly chemical thermodynamics is taught {.appendix}
+
+I studied chemistry back then. Balancing equations was just linear algebra, and organic chemistry was just lego with long names. However, when it came to chemical thermodynamics, it completely defeated me.
+
+Consider the simple reaction
+
+$$
+aA + bB \rightleftharpoons cC + dD
+$$
+
+The textbook said that at equilibrium, $\Delta G = 0$, where
+
+$$
+\Delta G = \Delta G^\circ + RT \ln Q, \quad
+Q = \frac{[C]^c [D]^d}{[A]^a[B]^b},
+$$
+
+At this point, I was lost. It is plain to see that $Q$ has units of $(\mathrm{~mol/L})^{c+d-a-b}$, and I knew from physics that you can never ever take the logarithm of something with a unit. What's worse, $\Delta G$ has units of $\mathrm{~J/mol}$ when it obviously should have units of $\mathrm{~J}$, because $\Delta G$ is just a difference in $G$, and since $G$ is "Gibbs free energy", both $G$ and $\Delta G$ should have the same units -- of $\mathrm{~J}$.
+
+And it got even worse when I read on and found questions that asked me to calculate the "total Gibbs free energy released during the reaction". I thought, well, since you end up at an equilibrium, and the textbook said that at equilibrium, $\Delta G = 0$, obviously there is no total Gibbs free energy released. That is of course wrong. At that point, I gave up trying to understand and simply practiced until I could solve the questions without understanding.
+
+It certainly didn't help when I kept seeing both $\Delta G^\circ$ and $\Delta G^\ominus$, and sometimes even $\Delta G^{\ominus}$, which is the "standard state" when the substance is a gas -- but only for some gasses... Point is, the notation is a complete mess, and the pedagogy is nonsensical.
+
+After I finally understood thermodynamics, I turned my sights on chemical thermodynamics, and remembered this $\Delta G$ nonsense. I started with the idea "No matter what they say, one can't possibly get the units wrong." and got into a shouting match with ChatGPT-4, who kept mumbling about "fugacity" and "real gasses". An hour of shouting later, I finally figured it out.
+
+As usual, as soon as I unlearned this, I knew the right phrase to search, and discovered that this is a common error, the entire anatomy of which has been autopsied carefully [@raffSpontaneityEquilibriumWhy2014; @raffSpontaneityEquilibriumII2014; @raffSpontaneityEquilibriumIII2014].

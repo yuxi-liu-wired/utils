@@ -1,33 +1,225 @@
-a: Finally there is the [interactive model] which looks like an optional add-on to the blog post.
-[b]: Finally, there is the [interactive model], which looks like an optional add-on to the blog post.
+[a]: a few other's were from [his blog].
+b: A few others were from [his blog].
 
-a: For example, suppose the judge wants to decide when the odds ratio is 10 to 1, then it would make the decision boundaries to be $[-\ln 10, + \ln 10]$.
-[b]: For example, suppose the judge wants to decide when the odds ratio is 10 to 1, then it would set the decision boundaries to be $[-\ln 10, + \ln 10]$.
+a: He has a strong tendency to verbosity and using the semicolon, which makes it hard to read.
+[b]: He has a strong tendency toward verbosity and using the semicolon, which makes reading difficult.
 
-a: That is, for any $X \subset R$, we have $\psi(X)=\psi(g(X))$.
-[b]: That is, for any $X \subset R$, we have $\psi(X) = \psi(g(X))$.
+a: Imagine when you are old, you and your few great-grandchildren stand under the eco-dome, and 20 artificial suns cast bright light from space.
+[b]: Imagine that when you are old, you and your few great-grandchildren stand under the eco-dome, with 20 artificial suns casting bright light from space.
 
-a: This essay explains *the Direct Approach* proposed by [@barnettScalingTransformativeAutoregressive2023]. [^direct-approach-report]
-[b]: This essay explains *the Direct Approach* proposed by [@barnettScalingTransformativeAutoregressive2023].[^direct-approach-report]
+a: At this time, you talk to your few great-grandchildren about our romantic and passionate era, and you lower your voice to tell them that there once was such a thing as night, such a thing as the moon, such a thing as trees, and such a thing as grass...
+[b]: At this time, you speak to your few great-grandchildren about our romantic and passionate era, and you lower your voice to tell them that there once were such things as night, the moon, trees, and grass...
 
-a: [^direct-approach-report]: The thing is released in a scattered way, typical for Internet-native publication.
-[b]: [^direct-approach-report]: The thing is released in a scattered way, typical for an internet-native publication.
+a: When they stare at each other in disbelief, you would then tell them that there was also such a thing as a poet!
+b: When they stare at each other in disbelief, you would then tell them that there was also such a thing as a poet.
 
-a: If we say that the first AGI has arrived when we have an AI that can write scientific papers that imitate a human scientist's, then we can calculate the log-perplexity loss of the first AGI.
-[b]: We can think of the peer-review of scientific papers as a Turing test, and say that AGI has arrived when we have AI scientists that can pass the papers peer-review. This allows us to calculate the log-perplexity loss of the first AGI.
+a: Chinese sci-fi lacks religious feelings.
+b: Chinese sci-fi lacks religious sentiments.
 
-a: If it were a human, then it would follow 'is' with 'my cat' with probability... I do not know. However, I do know that the odds *ratio* is 2 to 1. Now the total odds ratio is 12 to 1, I can decide: $H_0$.
-[b]: If it were a human, then it would follow 'is' with 'my cat' with probability... I do not know. However, I do know that the odds *ratio* is 2 to 1. Now that the total odds ratio is 12 to 1, I can decide: $H_0$.
+a: At the same time, we know that science and religion are incompatible, and sci-fi and religion are also incompatible.
+b: At the same time, we know that science and religion are incompatible, and so are sci-fi and religion.
 
-a: S, S' \text{ partitions } \Omega,\quad \text{such that} T^{-1}(S) = S,\; T^{-1}(S') = S',\; Pr(S) > 0,\; Pr(S') > 0
-[b]: S, S' \text{ partition } \Omega,\quad \text{such that} T^{-1}(S) = S,\; T^{-1}(S') = S',\; Pr(S) > 0,\; Pr(S') > 0
+a: However, some scholars believe that the reason why modern natural science was born in the West has something to do with the strong religious feelings in Western culture.
+b: However, some scholars believe that the reason why modern natural science was born in the West has something to do with the strong religious sentiments in Western culture.
 
-a: Let $U$ be a none empty open set.
-[b]: Let $U$ be a nonempty open set.
+a: This is a topic that can't be explained even with a huge book that presses people to death, so I'm not going to delve into it here, and Ill just talk about religious feelings in sci-fi.
+b: This is a topic that can't be explained even with a huge book that presses people to death, so I'm not going to delve into it here, and I'll just talk about religious feelings in sci-fi.
 
-a: For non-ergodic speakers. We simply [decompose the speaker into an ensemble of ergodic speakers],
-[b]: For non-ergodic speakers, we simply [decompose the speaker into an ensemble of ergodic speakers],
+a: Note that it's not religion that's being talked about here, it's religious feeling, and it's not the kind of feeling you have for God, it's atheistic, and it's not as sophisticated as Spinoza or whatever.
+b: Note that it's not religion being discussed here, it's religious feeling, and it's not the kind of feeling you have for God; it's atheistic and not as sophisticated as Spinoza or whatever.
 
-a: Intuitively, it that with probability 1,
-[b]: Intuitively, with probability 1,
+a: The religious feeling of sci-fi is a deep sense of awe at the grand mystery of the universe.
+b: The religious feeling in sci-fi is a deep sense of awe at the grand mystery of the universe.
+
+a: The former gives the reader the impression that the universe is not much bigger than a small town in a cop movie, and that the planets in space are just like storefronts on the side of the thoroughfare.
+b: The former gives the reader the impression that the universe is not much larger than a small town in a cop movie and that the planets in space are just like storefronts on the side of the thoroughfare.
+
+a: The latter makes the reader feel that an interstellar spacecraft flying at relativistic speeds behaves much like a taxicab on the street.
+b: The latter makes the reader feel that an interstellar spacecraft flying at relativistic speeds behaves very much like a taxicab on the street.
+
+a: In such a depiction, the author is blind to the cosmic grandeur.
+b: In such a depiction, the author is blind to cosmic grandeur.
+
+a: It is not that such a depiction is totally unacceptable; such episodes are often found in many of the world's most famous novels, such as *Interstellar Detective*[^interstellar-detective] and so on.
+b: It is not that such a depiction is totally unacceptable; episodes like these are often found in many of the world's most famous novels, such as *Interstellar Detective*[^interstellar-detective] and so on.
+
+a: For these allegorical novels, the universe is just a tool to develop the plot.
+b: In these allegorical novels, the universe is just a tool to develop the plot.
+
+a: A huge spaceship, flying in the dark silence of space to a distant goal.
+b: A huge spaceship flies in the dark silence of space to a distant goal.
+
+a: It will take 2000 years to accelerate, maintain cruising speed for 3000 years, and then 2000 years to decelerate.
+b: It will take 2000 years to accelerate, maintain cruising speed for 3000 years, and then another 2000 years to decelerate.
+
+a: Generations of people have been born and died.
+b: Generations of people have been born and have died.
+
+a: The Earth has become an ancient vague dream.
+b: The Earth has become an ancient, vague dream.
+
+a: The spaceship archaeologists can no longer unearth evidence, out of the vast strata of the spaceship, that the Earth once existed.
+b: The spaceship archaeologists can no longer unearth evidence, from the vast strata of the spaceship, that the Earth once existed.
+
+a: That distant destination has become a myth passed down for millennia, a religious fantasy.
+b: That distant destination has become a myth passed down for millennia; a religious fantasy.
+
+a: Generation after generation, people don't know where they came from; generation after generation, people don't know where they are going.
+b: Generation after generation, people don't know where they came from; generation after generation, people don't know where they're going.
+
+a: Most people believe that the spaceship is an eternal world that has existed and will exist forever, and only a small number of wise men, convinced of the existence of the destination, look day and night into the infinitely deep cosmic abyss in front of the spaceship...
+b: Most people believe that the spaceship is an eternal world that has existed and will exist forever, while only a small number of wise men, convinced of the destination's existence, look day and night into the infinitely deep cosmic abyss in front of the spaceship...
+
+a: Is it the far-reaching vastness of the universe, or the shortness of life.
+b: Is it the far-reaching vastness of the universe or the shortness of life?
+
+a: Perhaps, you thus look down on the whole history of humanity from the perspective of the universe, or the eyes of God, and you find with emotion that our civilization is only a tiny grain of sand in the cosmic desert of space and time.
+b: Perhaps you thus look down on the whole history of humanity from the perspective of the universe, or the eyes of God, and you find with emotion that our civilization is only a tiny grain of sand in the cosmic desert of space and time.
+
+a: One might think that FTL technology and space time leapfrogging depicted in sci-fi would inevitably make the universe perceptually smaller, just as airplanes and modern communication networks have made the earth smaller.
+b: One might think that FTL technology and space-time leapfrogging depicted in sci-fi would inevitably make the universe perceptually smaller, just as airplanes and modern communication networks have made the earth smaller.
+
+a: If FTL technology is really possible, perhaps the universe will one day be just a village in human senses, just as the global village is today.
+b: If FTL technology really becomes possible, perhaps the universe will one day be just a village in human senses, just as the global village is today.
+
+a: Think about it, given two novels which one do you want to read -- one depicting Columbus in the vast Atlantic Ocean, searching with great fear and little hope for the new land of his dreams, the other depicting a company clerk traveling by plane from Paris to New York City on a business trip.
+b: Think about it; given two novels, which one do you want to read -- one depicting Columbus in the vast Atlantic Ocean, searching with great fear and little hope for the new land of his dreams, or the other depicting a company clerk traveling by plane from Paris to New York City on a business trip?
+
+a: Meanwhile, the Earth hasn't actually been shrunk; vast expanses of earth and ocean still exist, and modern man is still experiencing the romantic thrill of ancient man's trek across the surface of this planet through hiking and the [America's Cup race].
+b: Meanwhile, the Earth hasn't actually shrunk; vast expanses of earth and ocean still exist, and modern man is still experiencing the romantic thrill of ancient man's trek across this planet's surface through hiking and the [America's Cup race].
+
+a: What's more, even in the FTL era, the universe as a whole is still full of great mystery and shock value.
+b: What's more, even in the FTL era, the universe as a whole is still full of great mystery and surprises.
+
+a: Frederick Pohl's *Father of the Stars* describes a billionaire who has spent his life building dozens of gigantic spaceships, all with conventional rocket engines, which carry tens of thousands of people into the vastness of space to open up a new living space for humanity.
+b: Frederick Pohl's *Father of the Stars* describes a billionaire who has spent his life building dozens of gigantic spaceships, all with conventional rocket engines, which carry tens of thousands of people into the vastness of space to open up new living spaces for humanity.
+
+a: A few decades after the departure of these spaceships, science on Earth made FTL spaceships a reality, and such spaceships, carrying the hero in his twilight years, took only a day or two to catch up with those traditional spaceships that had departed a few decades earlier, making the feat that the hero and tens of thousands of pioneers had carried out with all their lives a meaningless tragedy.
+b: A few decades after the departure of these spaceships, science on Earth made FTL spaceships a reality, and such spaceships, carrying the hero in his twilight years, took only a day or two to catch up with those traditional spaceships that had left decades earlier, making the feats the hero and tens of thousands of pioneers had undertaken with all their lives a meaningless tragedy.
+
+a: In this novel, Pohl uses the contrast between the two technologies to create a simultaneous feeling of the vastness of outer space, the tragedy of the pioneers, and the relentlessness of fate.
+b: In this novel, Pohl uses the contrast between the two technologies to create a simultaneous sense of the vastness of outer space, the tragedy of the pioneers, and the relentlessness of fate.
+
+a: The pinnacle of depictions of vast space time belongs to Arthur C. Clarke's *2001*, The fear, loneliness and awe of human beings in front of the mysterious universe expressed in the novel, which carves into the readers' heart and soul, is unforgettable for the rest of their lives.
+b: The pinnacle of depictions of vast space-time belongs to Arthur C. Clarke's *2001*, The fear, loneliness, and awe of human beings in front of the mysterious universe expressed in the novel, which carves into the readers' hearts and souls, is unforgettable for the rest of their lives.
+
+a: I remember 20 years ago that winter night, after reading that book, I went out to look up at the night sky, and suddenly felt that everything around me had disappeared, and the earth under my feet became a pure geometric plane with infinite extension of snow-white and smooth, and on this infinite two-dimensional plane, under the magnificent starry night sky, there stood I alone, facing this vast mystery that the human mind could not grasp...
+b: I remember 20 years ago, that winter night, after reading that book, I went out to look up at the night sky and suddenly felt that everything around me had disappeared, and the earth under my feet became a pure geometric plane with an infinite extension of snow-white smoothness, and on this infinite two-dimensional plane, under the magnificent starry night sky, there I stood alone, facing this vast mystery that the human mind could not grasp...
+
+a: feeling is like leaving a pond to see the sea.
+b: The feeling is like leaving a pond to see the sea.
+
+a: I once asked ten people whether the moon would come out in the daytime,
+b: I once asked ten people whether the moon would come out during the daytime,
+
+a: Under this concept, the universe is only a prop, a background and an accompaniment in the works.
+b: Under this concept, the universe is only a prop, a background, and an accompaniment in the works.
+
+a: The reason why *2010* and *2061* -- the two sequels of *2001* -- are not as successful as *2001*,
+b: The reason why *2010* and *2061* -- the two sequels to *2001* -- are not as successful as *2001*,
+
+a: but when you are finally informed that it was a mis-diagnosis,
+b: but when you are finally informed that it was a misdiagnosis,
+
+a: The apocalyptic experience of an individual is a very valuable one;
+b: The apocalyptic experience of an individual is very valuable;
+
+a: If the world suffers such a "mis-diagnosis";
+b: If the world suffers such a "misdiagnosis";
+
+a: Only sci-fi novels can bring about this apocalyptic experience,
+b: Only sci-fi novels can bring about this apocalyptic experience;
+
+a: he had liver cancer, so he wrote it to be his final work.
+b: He had liver cancer, so he wrote it to be his final work.
+
+a: Sci-fi novels can create a whole new world, where writers and readers can experience what is impossible in realilty -- this is why I love sci-fi.
+b: Sci-fi novels can create a whole new world, where writers and readers can experience what is impossible in reality -- this is why I love sci-fi.
+
+a: I started writing as a sci-fi fan, without any systematic consideration of sci-fi theories.
+b: I started writing as a sci-fi fan without any systematic consideration of sci-fi theories.
+
+a: I like sci-fi with less literary elements and more sci-fi elements, and have always thought that penetrating reality and dissecting human nature is niether the mission of sci-fi novels nor its comparative advantage -- the advantage of sci-fi lies in creating an imaginary world.
+b: I like sci-fi with fewer literary elements and more sci-fi elements and have always thought that penetrating reality and dissecting human nature is neither the mission of sci-fi novels nor its comparative advantage -- the advantage of sci-fi lies in creating an imaginary world.
+
+a: I used to hold a view that even I find extremist now: to tear sci-fi out from the confines of literature itself (the Sci-Fi section of the Tsinghua University BBS once tried to create an encyclopedia for virtual worlds, without much success).
+b: I used to hold a view that even now I find extremist: to tear sci-fi out of the confines of literature itself (the Sci-Fi section of the Tsinghua University BBS once tried to create an encyclopedia for virtual worlds, with little success).
+
+a: every writer should persist in their extremist views, while editors should hold an all-encompassing attitude towards all kinds of view; this is the only healthy environment for the development of sci-fi.
+b: Every writer should persist in their extremist views, while editors should hold an all-encompassing attitude towards all viewpoints; this is the only healthy environment for the development of sci-fi.
+
+a: But on the other hand, when sci-fi changed from a hobby into a career, I've found the need to manage many balancing acts -- this includes balancing the works for their scientific vs literary nature, profundity vs readability, sci-fi as literature vs commodities -- so my current works are a result of these; which are more or less a betrayal of my own ideals for sci-fi.
+b: But on the other hand, when sci-fi changed from a hobby to a career, I've found the need to manage many balancing acts -- this includes balancing the works for their scientific versus literary nature, profundity versus readability, sci-fi as literature versus commodities -- so my current works are a result of these, which are more or less a betrayal of my own ideals for sci-fi.
+
+a: For a writer like me who has spent years trekking on the roads of sci-fi, this is also a sign of maturity.
+b: For a writer like me who has spent years trekking the roads of sci-fi, this is also a sign of maturity.
+
+a: 2 day's leave to attend these Awards, but applied for it under a different reason.
+b: I took 2 days' leave to attend these Awards but applied for it under a different reason.
+
+a: 2 years ago when I published my first sci-fi story, a friend advised me to keep my writing activities "underground" in the unit (I worked at); he said, "In such a basic engineering department, mistakes and errors at work are tolerable, but not immaturity -- you must never let others feel that you are immature, or else your prospects are gone."
+b: Two years ago, when I published my first sci-fi story, a friend advised me to keep my writing activities "underground" in the unit where I worked; he said "In such a basic engineering department, mistakes and errors at work are tolerable, but not immaturity -- you must never let others feel that you are immature, or else your prospects are gone."
+
+a: This friend might be thought of as having misunderstood sci-fi, just as the society at large has; but in a way this reflects how immature our sci-fi is.
+b: This friend might be thought of as having misunderstood sci-fi, just as society at large has; but in a way, this reflects how immature our sci-fi is.
+
+a: For example: till now, our sci-fi stories have not created a milieu of their own -- we are just writing our own stories in the many milieu created by others.
+b: For example, till now, our sci-fi stories haven't created a milieu of their own -- we are just writing our own stories in the many milieus created by others.
+
+a: But to look at it in another way, sci-fi literature is by its very nature immature -- because it shows humanity in its childhood, filled with curiosity and fear for the vast and profound universe, as well as the urge to explore it.
+b: But to look at it another way, sci-fi literature is by its very nature immature -- because it shows humanity in its childhood, filled with curiosity and fear for the vast and profound universe, and the urge to explore it.
+
+a: In the face of such a universe, human science and philosophy are very immature, and sci-fi is the only literary form available to express our scientific and philosophical immaturities; so it's no surprise that sci-fi is filled with immaturity.
+b: In the face of such a universe, human science and philosophy are very immature, and sci-fi is the only literary form available to express our scientific and philosophical immaturities; therefore, it's no surprise that sci-fi is filled with immaturity.
+
+a: When human science is developed to the furthest extent and everything in the universe is discovered down to its smallest hair, that will be the day sci-fi dies.
+b: When human science is developed to its furthest extent and everything in the universe is discovered down to its smallest hair, that will be the day sci-fi dies.
+
+a: Presently -- faced with the immaturity of Chinese sci-fi -- everyone in our sci-fi community is envious of the adult sci-fi readership in the US, and see it as a sign of maturity in sci-fi literature.
+b: Presently -- faced with the immaturity of Chinese sci-fi -- everyone in our sci-fi community is envious of the adult sci-fi readership in the US and sees it as a sign of maturity in sci-fi literature.
+
+a: But one must know that senility comes after maturity, and death comes after senility.
+b: But one must know that senility comes after maturity and death follows senility.
+
+a: The prosperity of US sci-fi is largely a result of the prosperity of its movie and TV industries, and these sci-fi movies and TV shows are but a stylistic extension of the Golden Age of sci-fi.
+b: The prosperity of US sci-fi is largely the result of the prosperity of its movie and TV industries, and these sci-fi movies and TV shows are but stylistic extensions of the Golden Age of sci-fi.
+
+a: Contemporary sci-fi literature itself in US is already deep in twilight -- full of works applying complex techniques to express dense metaphors, completely devoid of the youthful energy of the Golden Age.
+b: Contemporary sci-fi literature itself in the US is already deep in twilight -- full of works applying complex techniques to express dense metaphors, completely devoid of the youthful energy of the Golden Age.
+
+a: Americans under 25 these days basically don't read sci-fi; I don't see what's to be envied about that.
+b: Americans under 25 these days basically don't read sci-fi; I see nothing to envy in that.
+
+a: We should be most envious of ourselves: our current sci-fi readership are the 8 or 9 o'clock sun, or even the 6 or 7 o'clock sun.
+b: We should be most envious of ourselves: our current sci-fi readership is the 8 or 9 o'clock sun, or even the 6 or 7 o'clock sun.
+
+a: Chinese sci-fi a market full of youth and hope, and this is what gives sci-fi writers like us confidence and strength -- compared to this, a little immaturity is really nothing.
+b: Chinese sci-fi is a market full of youth and hope, and this is what gives sci-fi writers like us confidence and strength -- compared to this, a little immaturity is really nothing.
+
+a: Some research show that many animals have language and deductive abilities, some of whom can make tools, and even a minority who has writing; but no evidence shows that animals can imagine (what does not exist), so imagination is the only difference between humanity and animals -- and our sci-fi fans here today are the most vibrant expression of that.
+b: Some research shows that many animals have language and deductive abilities, some of whom can make tools, and even a minority that has writing; however, no evidence shows that animals can imagine (what does not exist), so imagination is the only difference between humanity and animals -- and our sci-fi fans here today are the most vibrant expression of that.
+
+a: Seeing a drop of water in a sea -- reflections on traditional literary elements in sci-fi novels (2003)
+b: Seeing a Drop of Water in a Sea -- Reflections on Traditional Literary Elements in Sci-Fi Novels (2003)
+
+a: epiC _LiZicheng_ (5volumes, published 1963--1999)
+b: epic _LiZicheng_ (5 volumes, published 1963--1999)
+
+a: macro-descriptions ofhistoricalProcesses to
+b: macro-descriptions of historical processes to
+
+a: descriptions, andbothNoel opan
+b: descriptions, and both Noel Opan
+
+a: a purely energetiCstate.Inthese
+b: a purely energetic state. In these
+
+a: we must Reflectoncertain
+b: we must reflect on certain
+
+a: a brief Searchshows that
+b: A brief search shows that
+
+a: traditionalLiterature has no
+b: Traditional literature has no
 
