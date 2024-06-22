@@ -17,7 +17,7 @@ def main():
     temp = re.sub(r"THM\.", "::: {#thm-todo}\n\n## \n\n:::", temp)
     temp = re.sub(r"COR\.", "::: {#cor-todo}\n\n## \n\n:::", temp)
     temp = re.sub(r"LEMMA\.", "::: {#thm-todo}\n\n## \n\n:::", temp)
-    temp = re.sub(r"PROOF\.", "::: {.proof}\n\n## \n\n:::", temp)
+    temp = re.sub(r"PROOF\.", "::: {.proof}\n\n:::", temp)
 
     temp = re.sub(r"WARN\.", "::: {.callout-warning}\n\n:::", temp)
     temp = re.sub(r"COMM\.", "::: {.callout-tip}\n\n:::", temp)
@@ -35,7 +35,7 @@ def main():
     # general clean-up
     temp = re.sub(r"\$\$\s+- ", r"$$\n\n", temp)
     temp = re.sub(r"\$\$\s+", r"$$\n\n", temp)
-    temp = re.sub(r"^\t+ *-?", r"\n", temp, flags=re.MULTILINE)
+    temp = re.sub(r"^\t+ *-", r"\n", temp, flags=re.MULTILINE)
     temp = re.sub(r"^\s+$", "", temp, flags=re.MULTILINE)
     temp = re.sub(r"^-", "", temp, flags=re.MULTILINE)
     temp = re.sub(r"^\s+([A-Za-z].*)$", r"\n\n\1", temp, flags=re.MULTILINE)
