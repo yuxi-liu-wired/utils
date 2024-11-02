@@ -10,10 +10,22 @@ my $fstring = do { local $/; <$f> };
 close $f;
 my $temp = $fstring;
 
+# Output images
+open( my $fh, '>', 'output_images.txt' ) or die "Could not open file 'output_images.txt' $!";
+
+while ( $temp =~ /\!\[[^(]*\]\(\.\.\/assets\/([^)]*)\)/g ) {
+    print $fh "$1\n";
+}
+
+close $fh;
+
 # general clean-up
 $temp =~ s/^[ \t]*- /\n/g;
 $temp =~ s/\$ ([\.,!;:?])/\$$1/g;
 $temp =~ s/collapsed:: true//g;
+
+# Change image name files
+$temp =~ s/\!\[[^(]*\]\(\.\.\/assets\/([^)]*)\)/![]($1)/g;
 
 # thm, prop, proof
 $temp =~ s/PROP\./::: \{\#prp-todo\}\n\n\#\# \n\n:::/g;
@@ -36,8 +48,8 @@ $temp =~ s/E(_\{[^}]*\})\[/\\mathbb\{E\}$1\[/g;
 $temp =~ s/D\(([^;]+);([^\)]+)\)/D\($1 \\\| $2\)/g;
 
 # # general clean-up
-$temp =~ s/\$\$\s+- /\$\$\n\n/g;
-$temp =~ s/\$\$\s+/\$\$\n\n/g;
+$temp =~ s/\s+\$\$\s+- /\$\$\n\n/g;
+$temp =~ s/\s+\$\$\s+/\$\$\n\n/g;
 $temp =~ s/^\t+ *-/\n/mg;
 $temp =~ s/^ +//mg;
 $temp =~ s/^-//mg;
